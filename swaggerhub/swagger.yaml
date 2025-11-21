@@ -2,7 +2,7 @@
   "openapi" : "3.0.1",
   "info" : {
     "title" : "ApiPayment API",
-    "description" : "Comprehensive payment processing API for managing Stripe subscriptions, invoices, and payment methods. Supports both individual and enterprise subscription models.",
+    "description" : "API for handling payments, subscriptions, invoices, and payment methods for ApiPayment services.",
     "version" : "v1"
   },
   "servers" : [ {
@@ -12,11 +12,12 @@
     "/ApiPayment/v1/Health" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
-        "summary" : "Health check endpoint",
-        "description" : "Returns the health status of the API Payment service",
+        "summary" : "Health check",
+        "description" : "Returns service health status.",
+        "operationId" : "getHealth",
         "responses" : {
           "200" : {
-            "description" : "Service is healthy and operational"
+            "description" : "Success"
           }
         }
       }
@@ -24,11 +25,11 @@
     "/ApiPayment/v1/StripeProducts" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
-        "summary" : "Get all Stripe products",
-        "description" : "Retrieves a list of all available Stripe products configured in the system",
+        "summary" : "Retrieve Stripe products",
+        "description" : "Returns a list of Stripe products available for ApiPayment.",
         "responses" : {
           "200" : {
-            "description" : "Successfully retrieved list of Stripe products"
+            "description" : "Success"
           }
         }
       }
@@ -36,8 +37,6 @@
     "/ApiPayment/v1/StripeProductsLoggedInUser" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
-        "summary" : "Get Stripe products for logged-in user",
-        "description" : "Retrieves Stripe products available to the authenticated user based on their email address",
         "parameters" : [ {
           "name" : "email",
           "in" : "query",
