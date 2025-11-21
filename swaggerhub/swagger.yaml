@@ -1,0 +1,1533 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "ApiPayment API",
+    "version" : "v1"
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "paths" : {
+    "/ApiPayment/v1/Health" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/StripeProducts" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/StripeProductsLoggedInUser" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "includeResumeProduct",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "default" : false
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Products" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/StripeProductPriceChange" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "productPriceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "priceAmount",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/EnterpriseProducts" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/CreateDevelopersOverageInvoices" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/SaveProductOverageConfig" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProductOverageConfig"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProductOverageConfig"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProductOverageConfig"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProductOverageConfig"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/GetProductOverageConfig" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "productId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Subscription" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/StripeCustomerSubscriptions" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionSearchRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionSearchRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionSearchRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionSearchRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/GetEnterpriseDeveloperSubscriptions" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "developerId",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/UpgradeOptions" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "productId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "priceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/DowngradeOptions" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "productId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "priceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/UpgradeSubscription/ProratedCharge" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpgradeSubscriptionProratedChargeRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpgradeSubscriptionProratedChargeRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpgradeSubscriptionProratedChargeRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpgradeSubscriptionProratedChargeRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/UpgradeSubscription" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/TriggerDowngradeSubscription" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/DowngradeSubscription" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/CancelSubscriptionAdmin" : {
+      "delete" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/CancelSubscription" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Invoices" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoiceSearchRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoiceSearchRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoiceSearchRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoiceSearchRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/InvoicePay" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "invoiceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoicePayRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoicePayRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoicePayRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoicePayRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/CustomerPaymentMethods" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddPaymentMethodRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddPaymentMethodRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddPaymentMethodRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddPaymentMethodRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/UpdateCustomerPaymentMethods" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "paymentMethodId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdatePaymentMethodRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdatePaymentMethodRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdatePaymentMethodRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdatePaymentMethodRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/DeleteCustomerPaymentMethod" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "paymentMethodId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/SetDefaultCustomerPaymentMethod" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "paymentMethodId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/ShowPaymentMethodDetails" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "paymentMethodId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/ChangeSubscriptionPaymentMethod" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionPaymentMethodRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionPaymentMethodRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionPaymentMethodRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionPaymentMethodRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/GetSubscriptionPaymentMethods" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Enterprise/CancelSubscriptionAdmin" : {
+      "delete" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "subscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "adminEmail",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Enterprise/SuspendResumeSubscriptionByAdmin" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "subscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "action",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "adminEmail",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/SuspendSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "loggedInAdminEmail",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/ResumeSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "loggedInAdminEmail",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/CCD/ProductsFamilyMapping" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Enterprise/UpgradeSubscription" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "currentStripeProductPriceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "newStripeProductPriceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Enterprise/DowngradeSubscription" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "currentStripeProductPriceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "newStripeProductPriceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Config/Reload" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Config/Names" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Config/Names/{environment}" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "parameters" : [ {
+          "name" : "environment",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Config/Names/CURL" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Config/Names/CURL/{environment}" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "parameters" : [ {
+          "name" : "environment",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Health" : {
+      "get" : {
+        "tags" : [ "Health" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Help" : {
+      "get" : {
+        "tags" : [ "Help" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "AddPaymentMethodRequest" : {
+        "type" : "object",
+        "properties" : {
+          "AppCode" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "SuccessUrl" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "CancelUrl" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "Address" : {
+        "type" : "object",
+        "properties" : {
+          "city" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "country" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "line1" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "postal_code" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "state" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "Billing_Details" : {
+        "type" : "object",
+        "properties" : {
+          "address" : {
+            "$ref" : "#/components/schemas/Address"
+          },
+          "email" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "name" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "phone" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "Card" : {
+        "type" : "object",
+        "properties" : {
+          "exp_month" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "exp_year" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "DateRangeFilter" : {
+        "type" : "object",
+        "properties" : {
+          "GreaterThanOrEqual" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "LessThanOrEqual" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "LessThan" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "GreaterThan" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "InvoicePayRequest" : {
+        "type" : "object",
+        "properties" : {
+          "payment_method" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "InvoiceSearchRequest" : {
+        "type" : "object",
+        "properties" : {
+          "Limit" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Created" : {
+            "$ref" : "#/components/schemas/DateRangeFilter"
+          },
+          "invoiceStatus" : {
+            "$ref" : "#/components/schemas/InvoiceStatus"
+          },
+          "Customer" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "CollectionMethod" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "DueDate" : {
+            "$ref" : "#/components/schemas/DateRangeFilter"
+          },
+          "EndingBefore" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "StartingAfter" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "InvoiceStatus" : {
+        "type" : "integer",
+        "format" : "int32",
+        "enum" : [ 0, 1, 2, 3, 4 ]
+      },
+      "Item" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "price" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "PaymentMethodMetadata" : {
+        "type" : "object",
+        "properties" : {
+          "foo" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "ProductOverageConfig" : {
+        "required" : [ "NumberOfRequest", "ProductId", "Rate" ],
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "ProductId" : {
+            "maximum" : 999999999,
+            "minimum" : 1,
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "NumberOfRequest" : {
+            "maximum" : 1000000,
+            "minimum" : 1,
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Rate" : {
+            "maximum" : 10000,
+            "type" : "number",
+            "format" : "double"
+          },
+          "IsActive" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "CreatedDateTime" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "CreatedBy" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "SubscriptionPaymentMethodRequest" : {
+        "type" : "object",
+        "properties" : {
+          "default_payment_method" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "SubscriptionRequest" : {
+        "required" : [ "PriceId" ],
+        "type" : "object",
+        "properties" : {
+          "AppCode" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "PriceId" : {
+            "minLength" : 1,
+            "type" : "string"
+          },
+          "CustomerId" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "CustomerEmail" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "SuccessUrl" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "CancelUrl" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Quantity" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "TrialPeriodDays" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "SubscriptionSearchRequest" : {
+        "type" : "object",
+        "properties" : {
+          "Status" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Created" : {
+            "$ref" : "#/components/schemas/DateRangeFilter"
+          },
+          "EndingBefore" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "StartingAfter" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Limit" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "Price" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "UpdatePaymentMethodRequest" : {
+        "type" : "object",
+        "properties" : {
+          "billing_details" : {
+            "$ref" : "#/components/schemas/Billing_Details"
+          },
+          "metadata" : {
+            "$ref" : "#/components/schemas/PaymentMethodMetadata"
+          },
+          "card" : {
+            "$ref" : "#/components/schemas/Card"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "UpdateSubscriptionRequest" : {
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "nullable" : true,
+            "items" : {
+              "$ref" : "#/components/schemas/Item"
+            }
+          },
+          "proration_behavior" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "UpgradeSubscriptionProratedChargeRequest" : {
+        "type" : "object",
+        "properties" : {
+          "stripeSubscriptionId" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "customerId" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "newUpgradePriceId" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      }
+    }
+  }
+}
