@@ -28,7 +28,7 @@ namespace IO.Swagger.Controllers
     public class HelpApiController : ControllerBase
     { 
         /// <summary>
-        /// 
+        /// Get help information
         /// </summary>
         /// <response code="200">Success</response>
         [HttpGet]

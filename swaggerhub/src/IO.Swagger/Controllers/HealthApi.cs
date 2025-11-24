@@ -28,7 +28,7 @@ namespace IO.Swagger.Controllers
     public class HealthApiController : ControllerBase
     { 
         /// <summary>
-        /// 
+        /// Get root health status
         /// </summary>
         /// <response code="200">Success</response>
         [HttpGet]

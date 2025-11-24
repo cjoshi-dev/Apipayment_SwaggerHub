@@ -28,7 +28,7 @@ namespace IO.Swagger.Controllers
     public class ConfigApiController : ControllerBase
     { 
         /// <summary>
-        /// 
+        /// Get configuration names
         /// </summary>
         /// <response code="200">Success</response>
         [HttpGet]
@@ -44,7 +44,7 @@ namespace IO.Swagger.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Get configuration names by environment
         /// </summary>
         /// <param name="environment"></param>
         /// <response code="200">Success</response>
@@ -61,7 +61,7 @@ namespace IO.Swagger.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Get configuration names in CURL format
         /// </summary>
         /// <response code="200">Success</response>
         [HttpGet]
@@ -77,7 +77,7 @@ namespace IO.Swagger.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Get configuration names in CURL format by environment
         /// </summary>
         /// <param name="environment"></param>
         /// <response code="200">Success</response>
@@ -94,7 +94,7 @@ namespace IO.Swagger.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Reload configuration
         /// </summary>
         /// <response code="200">Success</response>
         [HttpGet]
