@@ -31,11 +31,28 @@ namespace IO.Swagger.Controllers
         /// 
         /// </summary>
         /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/CCD/ProductsFamilyMapping")]
+        [HttpPost]
+        [Route("/ApiPayment/v1/CreateDevelopersOverageInvoices")]
         [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1CCDProductsFamilyMappingGet")]
-        public virtual IActionResult ApiPaymentV1CCDProductsFamilyMappingGet()
+        [SwaggerOperation("CreateDevelopersOverageInvoices")]
+        public virtual IActionResult CreateDevelopersOverageInvoices()
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPost]
+        [Route("/ApiPayment/v1/Subscription")]
+        [ValidateModelState]
+        [SwaggerOperation("CreateSubscription")]
+        public virtual IActionResult CreateSubscription([FromBody]SubscriptionRequest body)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
@@ -51,147 +68,8 @@ namespace IO.Swagger.Controllers
         [HttpDelete]
         [Route("/ApiPayment/v1/CancelSubscriptionAdmin")]
         [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1CancelSubscriptionAdminDelete")]
-        public virtual IActionResult ApiPaymentV1CancelSubscriptionAdminDelete([FromQuery][Required()]string stripeSubscriptionId)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="stripeSubscriptionId"></param>
-        /// <response code="200">Success</response>
-        [HttpPut]
-        [Route("/ApiPayment/v1/CancelSubscription")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1CancelSubscriptionPut")]
-        public virtual IActionResult ApiPaymentV1CancelSubscriptionPut([FromQuery][Required()]string stripeSubscriptionId)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="stripeSubscriptionId"></param>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPut]
-        [Route("/ApiPayment/v1/ChangeSubscriptionPaymentMethod")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1ChangeSubscriptionPaymentMethodPut")]
-        public virtual IActionResult ApiPaymentV1ChangeSubscriptionPaymentMethodPut([FromQuery][Required()]string stripeSubscriptionId, [FromBody]SubscriptionPaymentMethodRequest body)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/CreateDevelopersOverageInvoices")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1CreateDevelopersOverageInvoicesPost")]
-        public virtual IActionResult ApiPaymentV1CreateDevelopersOverageInvoicesPost()
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="email"></param>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/CustomerPaymentMethods")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1CustomerPaymentMethodsGet")]
-        public virtual IActionResult ApiPaymentV1CustomerPaymentMethodsGet([FromQuery][Required()]string email)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="email"></param>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/CustomerPaymentMethods")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1CustomerPaymentMethodsPost")]
-        public virtual IActionResult ApiPaymentV1CustomerPaymentMethodsPost([FromQuery][Required()]string email, [FromBody]AddPaymentMethodRequest body)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="paymentMethodId"></param>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/DeleteCustomerPaymentMethod")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1DeleteCustomerPaymentMethodGet")]
-        public virtual IActionResult ApiPaymentV1DeleteCustomerPaymentMethodGet([FromQuery][Required()]string paymentMethodId)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="productId"></param>
-        /// <param name="priceId"></param>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/DowngradeOptions")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1DowngradeOptionsGet")]
-        public virtual IActionResult ApiPaymentV1DowngradeOptionsGet([FromQuery][Required()]string productId, [FromQuery][Required()]string priceId)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="stripeSubscriptionId"></param>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPut]
-        [Route("/ApiPayment/v1/DowngradeSubscription")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1DowngradeSubscriptionPut")]
-        public virtual IActionResult ApiPaymentV1DowngradeSubscriptionPut([FromQuery][Required()]string stripeSubscriptionId, [FromBody]UpdateSubscriptionRequest body)
+        [SwaggerOperation("DeleteCancelSubscriptionAdmin")]
+        public virtual IActionResult DeleteCancelSubscriptionAdmin([FromQuery][Required()]string stripeSubscriptionId)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
@@ -208,8 +86,8 @@ namespace IO.Swagger.Controllers
         [HttpDelete]
         [Route("/ApiPayment/v1/Enterprise/CancelSubscriptionAdmin")]
         [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1EnterpriseCancelSubscriptionAdminDelete")]
-        public virtual IActionResult ApiPaymentV1EnterpriseCancelSubscriptionAdminDelete([FromQuery][Required()]int? subscriptionId, [FromQuery][Required()]string adminEmail)
+        [SwaggerOperation("DeleteEnterpriseCancelSubscriptionAdmin")]
+        public virtual IActionResult DeleteEnterpriseCancelSubscriptionAdmin([FromQuery][Required()]int? subscriptionId, [FromQuery][Required()]string adminEmail)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
@@ -221,30 +99,12 @@ namespace IO.Swagger.Controllers
         /// 
         /// </summary>
         /// <param name="email"></param>
-        /// <param name="currentStripeProductPriceId"></param>
-        /// <param name="newStripeProductPriceId"></param>
-        /// <response code="200">Success</response>
-        [HttpPut]
-        [Route("/ApiPayment/v1/Enterprise/DowngradeSubscription")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1EnterpriseDowngradeSubscriptionPut")]
-        public virtual IActionResult ApiPaymentV1EnterpriseDowngradeSubscriptionPut([FromQuery][Required()]string email, [FromQuery][Required()]string currentStripeProductPriceId, [FromQuery][Required()]string newStripeProductPriceId)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/ApiPayment/v1/EnterpriseProducts")]
+        [Route("/ApiPayment/v1/CustomerPaymentMethods")]
         [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1EnterpriseProductsGet")]
-        public virtual IActionResult ApiPaymentV1EnterpriseProductsGet()
+        [SwaggerOperation("GetCustomerPaymentMethods")]
+        public virtual IActionResult GetCustomerPaymentMethods([FromQuery][Required()]string email)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
@@ -255,15 +115,13 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="subscriptionId"></param>
-        /// <param name="action"></param>
-        /// <param name="adminEmail"></param>
+        /// <param name="paymentMethodId"></param>
         /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/Enterprise/SuspendResumeSubscriptionByAdmin")]
+        [HttpGet]
+        [Route("/ApiPayment/v1/DeleteCustomerPaymentMethod")]
         [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1EnterpriseSuspendResumeSubscriptionByAdminPost")]
-        public virtual IActionResult ApiPaymentV1EnterpriseSuspendResumeSubscriptionByAdminPost([FromQuery][Required()]int? subscriptionId, [FromQuery][Required()]string action, [FromQuery][Required()]string adminEmail)
+        [SwaggerOperation("GetDeleteCustomerPaymentMethod")]
+        public virtual IActionResult GetDeleteCustomerPaymentMethod([FromQuery][Required()]string paymentMethodId)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
@@ -274,15 +132,14 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="email"></param>
-        /// <param name="currentStripeProductPriceId"></param>
-        /// <param name="newStripeProductPriceId"></param>
+        /// <param name="productId"></param>
+        /// <param name="priceId"></param>
         /// <response code="200">Success</response>
-        [HttpPut]
-        [Route("/ApiPayment/v1/Enterprise/UpgradeSubscription")]
+        [HttpGet]
+        [Route("/ApiPayment/v1/DowngradeOptions")]
         [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1EnterpriseUpgradeSubscriptionPut")]
-        public virtual IActionResult ApiPaymentV1EnterpriseUpgradeSubscriptionPut([FromQuery][Required()]string email, [FromQuery][Required()]string currentStripeProductPriceId, [FromQuery][Required()]string newStripeProductPriceId)
+        [SwaggerOperation("GetDowngradeOptions")]
+        public virtual IActionResult GetDowngradeOptions([FromQuery][Required()]string productId, [FromQuery][Required()]string priceId)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
@@ -299,78 +156,8 @@ namespace IO.Swagger.Controllers
         [HttpGet]
         [Route("/ApiPayment/v1/GetEnterpriseDeveloperSubscriptions")]
         [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1GetEnterpriseDeveloperSubscriptionsGet")]
-        public virtual IActionResult ApiPaymentV1GetEnterpriseDeveloperSubscriptionsGet([FromQuery]string email, [FromQuery]int? developerId)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="productId"></param>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/GetProductOverageConfig")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1GetProductOverageConfigGet")]
-        public virtual IActionResult ApiPaymentV1GetProductOverageConfigGet([FromQuery][Required()]int? productId)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="email"></param>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/GetSubscriptionPaymentMethods")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1GetSubscriptionPaymentMethodsGet")]
-        public virtual IActionResult ApiPaymentV1GetSubscriptionPaymentMethodsGet([FromQuery][Required()]string email)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="invoiceId"></param>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/InvoicePay")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1InvoicePayPost")]
-        public virtual IActionResult ApiPaymentV1InvoicePayPost([FromQuery][Required()]string invoiceId, [FromBody]InvoicePayRequest body)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="stripeSubscriptionId"></param>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/Invoices")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1InvoicesPost")]
-        public virtual IActionResult ApiPaymentV1InvoicesPost([FromQuery][Required()]string stripeSubscriptionId, [FromBody]InvoiceSearchRequest body)
+        [SwaggerOperation("GetEnterpriseDeveloperSubscriptions")]
+        public virtual IActionResult GetEnterpriseDeveloperSubscriptions([FromQuery]string email, [FromQuery]int? developerId)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
@@ -383,275 +170,10 @@ namespace IO.Swagger.Controllers
         /// </summary>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/ApiPayment/v1/Products")]
+        [Route("/ApiPayment/v1/EnterpriseProducts")]
         [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1ProductsGet")]
-        public virtual IActionResult ApiPaymentV1ProductsGet()
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="stripeSubscriptionId"></param>
-        /// <param name="loggedInAdminEmail"></param>
-        /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/ResumeSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1ResumeSubscriptionByAdminStripeSubscriptionIdLoggedInAdminEmailPost")]
-        public virtual IActionResult ApiPaymentV1ResumeSubscriptionByAdminStripeSubscriptionIdLoggedInAdminEmailPost([FromRoute][Required]string stripeSubscriptionId, [FromRoute][Required]string loggedInAdminEmail)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/SaveProductOverageConfig")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1SaveProductOverageConfigPost")]
-        public virtual IActionResult ApiPaymentV1SaveProductOverageConfigPost([FromBody]ProductOverageConfig body)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="email"></param>
-        /// <param name="paymentMethodId"></param>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/SetDefaultCustomerPaymentMethod")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1SetDefaultCustomerPaymentMethodGet")]
-        public virtual IActionResult ApiPaymentV1SetDefaultCustomerPaymentMethodGet([FromQuery][Required()]string email, [FromQuery][Required()]string paymentMethodId)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="paymentMethodId"></param>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/ShowPaymentMethodDetails")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1ShowPaymentMethodDetailsGet")]
-        public virtual IActionResult ApiPaymentV1ShowPaymentMethodDetailsGet([FromQuery][Required()]string paymentMethodId)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="email"></param>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/StripeCustomerSubscriptions")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1StripeCustomerSubscriptionsPost")]
-        public virtual IActionResult ApiPaymentV1StripeCustomerSubscriptionsPost([FromQuery][Required()]string email, [FromBody]SubscriptionSearchRequest body)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="productPriceId"></param>
-        /// <param name="priceAmount"></param>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/StripeProductPriceChange")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1StripeProductPriceChangeGet")]
-        public virtual IActionResult ApiPaymentV1StripeProductPriceChangeGet([FromQuery][Required()]string productPriceId, [FromQuery][Required()]int? priceAmount)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Retrieve Stripe products
-        /// </summary>
-        /// <remarks>Returns a list of Stripe products available for ApiPayment.</remarks>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/StripeProducts")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1StripeProductsGet")]
-        public virtual IActionResult ApiPaymentV1StripeProductsGet()
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="email"></param>
-        /// <param name="includeResumeProduct"></param>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/StripeProductsLoggedInUser")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1StripeProductsLoggedInUserGet")]
-        public virtual IActionResult ApiPaymentV1StripeProductsLoggedInUserGet([FromQuery][Required()]string email, [FromQuery]bool? includeResumeProduct)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/Subscription")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1SubscriptionPost")]
-        public virtual IActionResult ApiPaymentV1SubscriptionPost([FromBody]SubscriptionRequest body)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="stripeSubscriptionId"></param>
-        /// <param name="loggedInAdminEmail"></param>
-        /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/SuspendSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1SuspendSubscriptionByAdminStripeSubscriptionIdLoggedInAdminEmailPost")]
-        public virtual IActionResult ApiPaymentV1SuspendSubscriptionByAdminStripeSubscriptionIdLoggedInAdminEmailPost([FromRoute][Required]string stripeSubscriptionId, [FromRoute][Required]string loggedInAdminEmail)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="stripeSubscriptionId"></param>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/TriggerDowngradeSubscription")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1TriggerDowngradeSubscriptionPost")]
-        public virtual IActionResult ApiPaymentV1TriggerDowngradeSubscriptionPost([FromQuery][Required()]string stripeSubscriptionId, [FromBody]UpdateSubscriptionRequest body)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="paymentMethodId"></param>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPut]
-        [Route("/ApiPayment/v1/UpdateCustomerPaymentMethods")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1UpdateCustomerPaymentMethodsPut")]
-        public virtual IActionResult ApiPaymentV1UpdateCustomerPaymentMethodsPut([FromQuery][Required()]string paymentMethodId, [FromBody]UpdatePaymentMethodRequest body)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="productId"></param>
-        /// <param name="priceId"></param>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/ApiPayment/v1/UpgradeOptions")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1UpgradeOptionsGet")]
-        public virtual IActionResult ApiPaymentV1UpgradeOptionsGet([FromQuery][Required()]string productId, [FromQuery][Required()]string priceId)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPost]
-        [Route("/ApiPayment/v1/UpgradeSubscription/ProratedCharge")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1UpgradeSubscriptionProratedChargePost")]
-        public virtual IActionResult ApiPaymentV1UpgradeSubscriptionProratedChargePost([FromBody]UpgradeSubscriptionProratedChargeRequest body)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="stripeSubscriptionId"></param>
-        /// <param name="body"></param>
-        /// <response code="200">Success</response>
-        [HttpPut]
-        [Route("/ApiPayment/v1/UpgradeSubscription")]
-        [ValidateModelState]
-        [SwaggerOperation("ApiPaymentV1UpgradeSubscriptionPut")]
-        public virtual IActionResult ApiPaymentV1UpgradeSubscriptionPut([FromQuery][Required()]string stripeSubscriptionId, [FromBody]UpdateSubscriptionRequest body)
+        [SwaggerOperation("GetEnterpriseProducts")]
+        public virtual IActionResult GetEnterpriseProducts()
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
@@ -669,6 +191,484 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("GetHealth")]
         public virtual IActionResult GetHealth()
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <response code="200">Success</response>
+        [HttpGet]
+        [Route("/ApiPayment/v1/GetProductOverageConfig")]
+        [ValidateModelState]
+        [SwaggerOperation("GetProductOverageConfig")]
+        public virtual IActionResult GetProductOverageConfig([FromQuery][Required()]int? productId)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <response code="200">Success</response>
+        [HttpGet]
+        [Route("/ApiPayment/v1/Products")]
+        [ValidateModelState]
+        [SwaggerOperation("GetProducts")]
+        public virtual IActionResult GetProducts()
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <response code="200">Success</response>
+        [HttpGet]
+        [Route("/ApiPayment/v1/CCD/ProductsFamilyMapping")]
+        [ValidateModelState]
+        [SwaggerOperation("GetProductsFamilyMapping")]
+        public virtual IActionResult GetProductsFamilyMapping()
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="paymentMethodId"></param>
+        /// <response code="200">Success</response>
+        [HttpGet]
+        [Route("/ApiPayment/v1/SetDefaultCustomerPaymentMethod")]
+        [ValidateModelState]
+        [SwaggerOperation("GetSetDefaultCustomerPaymentMethod")]
+        public virtual IActionResult GetSetDefaultCustomerPaymentMethod([FromQuery][Required()]string email, [FromQuery][Required()]string paymentMethodId)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="paymentMethodId"></param>
+        /// <response code="200">Success</response>
+        [HttpGet]
+        [Route("/ApiPayment/v1/ShowPaymentMethodDetails")]
+        [ValidateModelState]
+        [SwaggerOperation("GetShowPaymentMethodDetails")]
+        public virtual IActionResult GetShowPaymentMethodDetails([FromQuery][Required()]string paymentMethodId)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productPriceId"></param>
+        /// <param name="priceAmount"></param>
+        /// <response code="200">Success</response>
+        [HttpGet]
+        [Route("/ApiPayment/v1/StripeProductPriceChange")]
+        [ValidateModelState]
+        [SwaggerOperation("GetStripeProductPriceChange")]
+        public virtual IActionResult GetStripeProductPriceChange([FromQuery][Required()]string productPriceId, [FromQuery][Required()]int? priceAmount)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Retrieve Stripe products
+        /// </summary>
+        /// <remarks>Returns a list of Stripe products available for ApiPayment.</remarks>
+        /// <response code="200">Success</response>
+        [HttpGet]
+        [Route("/ApiPayment/v1/StripeProducts")]
+        [ValidateModelState]
+        [SwaggerOperation("GetStripeProducts")]
+        public virtual IActionResult GetStripeProducts()
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="includeResumeProduct"></param>
+        /// <response code="200">Success</response>
+        [HttpGet]
+        [Route("/ApiPayment/v1/StripeProductsLoggedInUser")]
+        [ValidateModelState]
+        [SwaggerOperation("GetStripeProductsLoggedInUser")]
+        public virtual IActionResult GetStripeProductsLoggedInUser([FromQuery][Required()]string email, [FromQuery]bool? includeResumeProduct)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <response code="200">Success</response>
+        [HttpGet]
+        [Route("/ApiPayment/v1/GetSubscriptionPaymentMethods")]
+        [ValidateModelState]
+        [SwaggerOperation("GetSubscriptionPaymentMethods")]
+        public virtual IActionResult GetSubscriptionPaymentMethods([FromQuery][Required()]string email)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="priceId"></param>
+        /// <response code="200">Success</response>
+        [HttpGet]
+        [Route("/ApiPayment/v1/UpgradeOptions")]
+        [ValidateModelState]
+        [SwaggerOperation("GetUpgradeOptions")]
+        public virtual IActionResult GetUpgradeOptions([FromQuery][Required()]string productId, [FromQuery][Required()]string priceId)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPost]
+        [Route("/ApiPayment/v1/CustomerPaymentMethods")]
+        [ValidateModelState]
+        [SwaggerOperation("PostCustomerPaymentMethods")]
+        public virtual IActionResult PostCustomerPaymentMethods([FromQuery][Required()]string email, [FromBody]AddPaymentMethodRequest body)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="subscriptionId"></param>
+        /// <param name="action"></param>
+        /// <param name="adminEmail"></param>
+        /// <response code="200">Success</response>
+        [HttpPost]
+        [Route("/ApiPayment/v1/Enterprise/SuspendResumeSubscriptionByAdmin")]
+        [ValidateModelState]
+        [SwaggerOperation("PostEnterpriseSuspendResumeSubscriptionByAdmin")]
+        public virtual IActionResult PostEnterpriseSuspendResumeSubscriptionByAdmin([FromQuery][Required()]int? subscriptionId, [FromQuery][Required()]string action, [FromQuery][Required()]string adminEmail)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="invoiceId"></param>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPost]
+        [Route("/ApiPayment/v1/InvoicePay")]
+        [ValidateModelState]
+        [SwaggerOperation("PostInvoicePay")]
+        public virtual IActionResult PostInvoicePay([FromQuery][Required()]string invoiceId, [FromBody]InvoicePayRequest body)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stripeSubscriptionId"></param>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPost]
+        [Route("/ApiPayment/v1/Invoices")]
+        [ValidateModelState]
+        [SwaggerOperation("PostInvoices")]
+        public virtual IActionResult PostInvoices([FromQuery][Required()]string stripeSubscriptionId, [FromBody]InvoiceSearchRequest body)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stripeSubscriptionId"></param>
+        /// <param name="loggedInAdminEmail"></param>
+        /// <response code="200">Success</response>
+        [HttpPost]
+        [Route("/ApiPayment/v1/ResumeSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}")]
+        [ValidateModelState]
+        [SwaggerOperation("PostResumeSubscriptionByAdmin")]
+        public virtual IActionResult PostResumeSubscriptionByAdmin([FromRoute][Required]string stripeSubscriptionId, [FromRoute][Required]string loggedInAdminEmail)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPost]
+        [Route("/ApiPayment/v1/StripeCustomerSubscriptions")]
+        [ValidateModelState]
+        [SwaggerOperation("PostStripeCustomerSubscriptions")]
+        public virtual IActionResult PostStripeCustomerSubscriptions([FromQuery][Required()]string email, [FromBody]SubscriptionSearchRequest body)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stripeSubscriptionId"></param>
+        /// <param name="loggedInAdminEmail"></param>
+        /// <response code="200">Success</response>
+        [HttpPost]
+        [Route("/ApiPayment/v1/SuspendSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}")]
+        [ValidateModelState]
+        [SwaggerOperation("PostSuspendSubscriptionByAdmin")]
+        public virtual IActionResult PostSuspendSubscriptionByAdmin([FromRoute][Required]string stripeSubscriptionId, [FromRoute][Required]string loggedInAdminEmail)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stripeSubscriptionId"></param>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPost]
+        [Route("/ApiPayment/v1/TriggerDowngradeSubscription")]
+        [ValidateModelState]
+        [SwaggerOperation("PostTriggerDowngradeSubscription")]
+        public virtual IActionResult PostTriggerDowngradeSubscription([FromQuery][Required()]string stripeSubscriptionId, [FromBody]UpdateSubscriptionRequest body)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPost]
+        [Route("/ApiPayment/v1/UpgradeSubscription/ProratedCharge")]
+        [ValidateModelState]
+        [SwaggerOperation("PostUpgradeSubscriptionProratedCharge")]
+        public virtual IActionResult PostUpgradeSubscriptionProratedCharge([FromBody]UpgradeSubscriptionProratedChargeRequest body)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stripeSubscriptionId"></param>
+        /// <response code="200">Success</response>
+        [HttpPut]
+        [Route("/ApiPayment/v1/CancelSubscription")]
+        [ValidateModelState]
+        [SwaggerOperation("PutCancelSubscription")]
+        public virtual IActionResult PutCancelSubscription([FromQuery][Required()]string stripeSubscriptionId)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stripeSubscriptionId"></param>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPut]
+        [Route("/ApiPayment/v1/ChangeSubscriptionPaymentMethod")]
+        [ValidateModelState]
+        [SwaggerOperation("PutChangeSubscriptionPaymentMethod")]
+        public virtual IActionResult PutChangeSubscriptionPaymentMethod([FromQuery][Required()]string stripeSubscriptionId, [FromBody]SubscriptionPaymentMethodRequest body)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stripeSubscriptionId"></param>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPut]
+        [Route("/ApiPayment/v1/DowngradeSubscription")]
+        [ValidateModelState]
+        [SwaggerOperation("PutDowngradeSubscription")]
+        public virtual IActionResult PutDowngradeSubscription([FromQuery][Required()]string stripeSubscriptionId, [FromBody]UpdateSubscriptionRequest body)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="currentStripeProductPriceId"></param>
+        /// <param name="newStripeProductPriceId"></param>
+        /// <response code="200">Success</response>
+        [HttpPut]
+        [Route("/ApiPayment/v1/Enterprise/DowngradeSubscription")]
+        [ValidateModelState]
+        [SwaggerOperation("PutEnterpriseDowngradeSubscription")]
+        public virtual IActionResult PutEnterpriseDowngradeSubscription([FromQuery][Required()]string email, [FromQuery][Required()]string currentStripeProductPriceId, [FromQuery][Required()]string newStripeProductPriceId)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="currentStripeProductPriceId"></param>
+        /// <param name="newStripeProductPriceId"></param>
+        /// <response code="200">Success</response>
+        [HttpPut]
+        [Route("/ApiPayment/v1/Enterprise/UpgradeSubscription")]
+        [ValidateModelState]
+        [SwaggerOperation("PutEnterpriseUpgradeSubscription")]
+        public virtual IActionResult PutEnterpriseUpgradeSubscription([FromQuery][Required()]string email, [FromQuery][Required()]string currentStripeProductPriceId, [FromQuery][Required()]string newStripeProductPriceId)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="paymentMethodId"></param>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPut]
+        [Route("/ApiPayment/v1/UpdateCustomerPaymentMethods")]
+        [ValidateModelState]
+        [SwaggerOperation("PutUpdateCustomerPaymentMethods")]
+        public virtual IActionResult PutUpdateCustomerPaymentMethods([FromQuery][Required()]string paymentMethodId, [FromBody]UpdatePaymentMethodRequest body)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stripeSubscriptionId"></param>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPut]
+        [Route("/ApiPayment/v1/UpgradeSubscription")]
+        [ValidateModelState]
+        [SwaggerOperation("PutUpgradeSubscription")]
+        public virtual IActionResult PutUpgradeSubscription([FromQuery][Required()]string stripeSubscriptionId, [FromBody]UpdateSubscriptionRequest body)
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="body"></param>
+        /// <response code="200">Success</response>
+        [HttpPost]
+        [Route("/ApiPayment/v1/SaveProductOverageConfig")]
+        [ValidateModelState]
+        [SwaggerOperation("SaveProductOverageConfig")]
+        public virtual IActionResult SaveProductOverageConfig([FromBody]ProductOverageConfig body)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);

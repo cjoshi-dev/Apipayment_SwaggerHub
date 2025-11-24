@@ -34,8 +34,8 @@ namespace IO.Swagger.Controllers
         [HttpGet]
         [Route("/Health")]
         [ValidateModelState]
-        [SwaggerOperation("HealthGet")]
-        public virtual IActionResult HealthGet()
+        [SwaggerOperation("GetHealthRoot")]
+        public virtual IActionResult GetHealthRoot()
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);

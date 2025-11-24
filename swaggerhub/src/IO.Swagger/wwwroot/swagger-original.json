@@ -27,6 +27,7 @@
         "tags" : [ "ApiPayment" ],
         "summary" : "Retrieve Stripe products",
         "description" : "Returns a list of Stripe products available for ApiPayment.",
+        "operationId" : "getStripeProducts",
         "responses" : {
           "200" : {
             "description" : "Success"
@@ -37,6 +38,7 @@
     "/ApiPayment/v1/StripeProductsLoggedInUser" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getStripeProductsLoggedInUser",
         "parameters" : [ {
           "name" : "email",
           "in" : "query",
@@ -67,6 +69,7 @@
     "/ApiPayment/v1/Products" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getProducts",
         "responses" : {
           "200" : {
             "description" : "Success"
@@ -77,6 +80,7 @@
     "/ApiPayment/v1/StripeProductPriceChange" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getStripeProductPriceChange",
         "parameters" : [ {
           "name" : "productPriceId",
           "in" : "query",
@@ -107,6 +111,7 @@
     "/ApiPayment/v1/EnterpriseProducts" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getEnterpriseProducts",
         "responses" : {
           "200" : {
             "description" : "Success"
@@ -117,6 +122,7 @@
     "/ApiPayment/v1/CreateDevelopersOverageInvoices" : {
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "createDevelopersOverageInvoices",
         "responses" : {
           "200" : {
             "description" : "Success"
@@ -127,6 +133,7 @@
     "/ApiPayment/v1/SaveProductOverageConfig" : {
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "saveProductOverageConfig",
         "requestBody" : {
           "content" : {
             "application/json-patch+json" : {
@@ -161,6 +168,7 @@
     "/ApiPayment/v1/GetProductOverageConfig" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getProductOverageConfig",
         "parameters" : [ {
           "name" : "productId",
           "in" : "query",
@@ -182,6 +190,7 @@
     "/ApiPayment/v1/Subscription" : {
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "createSubscription",
         "requestBody" : {
           "content" : {
             "application/json-patch+json" : {
@@ -216,6 +225,7 @@
     "/ApiPayment/v1/StripeCustomerSubscriptions" : {
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "postStripeCustomerSubscriptions",
         "parameters" : [ {
           "name" : "email",
           "in" : "query",
@@ -260,6 +270,7 @@
     "/ApiPayment/v1/GetEnterpriseDeveloperSubscriptions" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getEnterpriseDeveloperSubscriptions",
         "parameters" : [ {
           "name" : "email",
           "in" : "query",
@@ -290,6 +301,7 @@
     "/ApiPayment/v1/UpgradeOptions" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getUpgradeOptions",
         "parameters" : [ {
           "name" : "productId",
           "in" : "query",
@@ -319,6 +331,7 @@
     "/ApiPayment/v1/DowngradeOptions" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getDowngradeOptions",
         "parameters" : [ {
           "name" : "productId",
           "in" : "query",
@@ -348,6 +361,7 @@
     "/ApiPayment/v1/UpgradeSubscription/ProratedCharge" : {
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "postUpgradeSubscriptionProratedCharge",
         "requestBody" : {
           "content" : {
             "application/json-patch+json" : {
@@ -382,6 +396,7 @@
     "/ApiPayment/v1/UpgradeSubscription" : {
       "put" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "putUpgradeSubscription",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
           "in" : "query",
@@ -426,6 +441,7 @@
     "/ApiPayment/v1/TriggerDowngradeSubscription" : {
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "postTriggerDowngradeSubscription",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
           "in" : "query",
@@ -470,6 +486,7 @@
     "/ApiPayment/v1/DowngradeSubscription" : {
       "put" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "putDowngradeSubscription",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
           "in" : "query",
@@ -514,6 +531,7 @@
     "/ApiPayment/v1/CancelSubscriptionAdmin" : {
       "delete" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "deleteCancelSubscriptionAdmin",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
           "in" : "query",
@@ -534,6 +552,7 @@
     "/ApiPayment/v1/CancelSubscription" : {
       "put" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "putCancelSubscription",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
           "in" : "query",
@@ -554,6 +573,7 @@
     "/ApiPayment/v1/Invoices" : {
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "postInvoices",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
           "in" : "query",
@@ -598,6 +618,7 @@
     "/ApiPayment/v1/InvoicePay" : {
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "postInvoicePay",
         "parameters" : [ {
           "name" : "invoiceId",
           "in" : "query",
@@ -642,6 +663,7 @@
     "/ApiPayment/v1/CustomerPaymentMethods" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getCustomerPaymentMethods",
         "parameters" : [ {
           "name" : "email",
           "in" : "query",
@@ -660,6 +682,7 @@
       },
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "postCustomerPaymentMethods",
         "parameters" : [ {
           "name" : "email",
           "in" : "query",
@@ -704,6 +727,7 @@
     "/ApiPayment/v1/UpdateCustomerPaymentMethods" : {
       "put" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "putUpdateCustomerPaymentMethods",
         "parameters" : [ {
           "name" : "paymentMethodId",
           "in" : "query",
@@ -748,6 +772,7 @@
     "/ApiPayment/v1/DeleteCustomerPaymentMethod" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getDeleteCustomerPaymentMethod",
         "parameters" : [ {
           "name" : "paymentMethodId",
           "in" : "query",
@@ -768,6 +793,7 @@
     "/ApiPayment/v1/SetDefaultCustomerPaymentMethod" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getSetDefaultCustomerPaymentMethod",
         "parameters" : [ {
           "name" : "email",
           "in" : "query",
@@ -797,6 +823,7 @@
     "/ApiPayment/v1/ShowPaymentMethodDetails" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getShowPaymentMethodDetails",
         "parameters" : [ {
           "name" : "paymentMethodId",
           "in" : "query",
@@ -817,6 +844,7 @@
     "/ApiPayment/v1/ChangeSubscriptionPaymentMethod" : {
       "put" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "putChangeSubscriptionPaymentMethod",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
           "in" : "query",
@@ -861,6 +889,7 @@
     "/ApiPayment/v1/GetSubscriptionPaymentMethods" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getSubscriptionPaymentMethods",
         "parameters" : [ {
           "name" : "email",
           "in" : "query",
@@ -881,6 +910,7 @@
     "/ApiPayment/v1/Enterprise/CancelSubscriptionAdmin" : {
       "delete" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "deleteEnterpriseCancelSubscriptionAdmin",
         "parameters" : [ {
           "name" : "subscriptionId",
           "in" : "query",
@@ -911,6 +941,7 @@
     "/ApiPayment/v1/Enterprise/SuspendResumeSubscriptionByAdmin" : {
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "postEnterpriseSuspendResumeSubscriptionByAdmin",
         "parameters" : [ {
           "name" : "subscriptionId",
           "in" : "query",
@@ -950,6 +981,7 @@
     "/ApiPayment/v1/SuspendSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}" : {
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "postSuspendSubscriptionByAdmin",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
           "in" : "path",
@@ -979,6 +1011,7 @@
     "/ApiPayment/v1/ResumeSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}" : {
       "post" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "postResumeSubscriptionByAdmin",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
           "in" : "path",
@@ -1008,6 +1041,7 @@
     "/ApiPayment/v1/CCD/ProductsFamilyMapping" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "getProductsFamilyMapping",
         "responses" : {
           "200" : {
             "description" : "Success"
@@ -1018,6 +1052,7 @@
     "/ApiPayment/v1/Enterprise/UpgradeSubscription" : {
       "put" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "putEnterpriseUpgradeSubscription",
         "parameters" : [ {
           "name" : "email",
           "in" : "query",
@@ -1056,6 +1091,7 @@
     "/ApiPayment/v1/Enterprise/DowngradeSubscription" : {
       "put" : {
         "tags" : [ "ApiPayment" ],
+        "operationId" : "putEnterpriseDowngradeSubscription",
         "parameters" : [ {
           "name" : "email",
           "in" : "query",
@@ -1094,6 +1130,7 @@
     "/Config/Reload" : {
       "get" : {
         "tags" : [ "Config" ],
+        "operationId" : "getConfigReload",
         "responses" : {
           "200" : {
             "description" : "Success"
@@ -1104,6 +1141,7 @@
     "/Config/Names" : {
       "get" : {
         "tags" : [ "Config" ],
+        "operationId" : "getConfigNames",
         "responses" : {
           "200" : {
             "description" : "Success"
@@ -1114,6 +1152,7 @@
     "/Config/Names/{environment}" : {
       "get" : {
         "tags" : [ "Config" ],
+        "operationId" : "getConfigNamesByEnvironment",
         "parameters" : [ {
           "name" : "environment",
           "in" : "path",
@@ -1134,6 +1173,7 @@
     "/Config/Names/CURL" : {
       "get" : {
         "tags" : [ "Config" ],
+        "operationId" : "getConfigNamesCurl",
         "responses" : {
           "200" : {
             "description" : "Success"
@@ -1144,6 +1184,7 @@
     "/Config/Names/CURL/{environment}" : {
       "get" : {
         "tags" : [ "Config" ],
+        "operationId" : "getConfigNamesCurlByEnvironment",
         "parameters" : [ {
           "name" : "environment",
           "in" : "path",
@@ -1164,6 +1205,7 @@
     "/Health" : {
       "get" : {
         "tags" : [ "Health" ],
+        "operationId" : "getHealthRoot",
         "responses" : {
           "200" : {
             "description" : "Success"
@@ -1174,6 +1216,7 @@
     "/Help" : {
       "get" : {
         "tags" : [ "Help" ],
+        "operationId" : "getHelp",
         "responses" : {
           "200" : {
             "description" : "Success"

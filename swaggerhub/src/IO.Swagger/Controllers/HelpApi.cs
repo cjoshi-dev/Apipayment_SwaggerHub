@@ -34,8 +34,8 @@ namespace IO.Swagger.Controllers
         [HttpGet]
         [Route("/Help")]
         [ValidateModelState]
-        [SwaggerOperation("HelpGet")]
-        public virtual IActionResult HelpGet()
+        [SwaggerOperation("GetHelp")]
+        public virtual IActionResult GetHelp()
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);

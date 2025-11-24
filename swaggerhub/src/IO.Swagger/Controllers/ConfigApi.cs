@@ -30,29 +30,12 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="environment"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/Config/Names/CURL/{environment}")]
+        [Route("/Config/Names")]
         [ValidateModelState]
-        [SwaggerOperation("ConfigNamesCURLEnvironmentGet")]
-        public virtual IActionResult ConfigNamesCURLEnvironmentGet([FromRoute][Required]string environment)
-        { 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200);
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <response code="200">Success</response>
-        [HttpGet]
-        [Route("/Config/Names/CURL")]
-        [ValidateModelState]
-        [SwaggerOperation("ConfigNamesCURLGet")]
-        public virtual IActionResult ConfigNamesCURLGet()
+        [SwaggerOperation("GetConfigNames")]
+        public virtual IActionResult GetConfigNames()
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
@@ -68,8 +51,8 @@ namespace IO.Swagger.Controllers
         [HttpGet]
         [Route("/Config/Names/{environment}")]
         [ValidateModelState]
-        [SwaggerOperation("ConfigNamesEnvironmentGet")]
-        public virtual IActionResult ConfigNamesEnvironmentGet([FromRoute][Required]string environment)
+        [SwaggerOperation("GetConfigNamesByEnvironment")]
+        public virtual IActionResult GetConfigNamesByEnvironment([FromRoute][Required]string environment)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
@@ -82,10 +65,27 @@ namespace IO.Swagger.Controllers
         /// </summary>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/Config/Names")]
+        [Route("/Config/Names/CURL")]
         [ValidateModelState]
-        [SwaggerOperation("ConfigNamesGet")]
-        public virtual IActionResult ConfigNamesGet()
+        [SwaggerOperation("GetConfigNamesCurl")]
+        public virtual IActionResult GetConfigNamesCurl()
+        { 
+            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+            // return StatusCode(200);
+
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="environment"></param>
+        /// <response code="200">Success</response>
+        [HttpGet]
+        [Route("/Config/Names/CURL/{environment}")]
+        [ValidateModelState]
+        [SwaggerOperation("GetConfigNamesCurlByEnvironment")]
+        public virtual IActionResult GetConfigNamesCurlByEnvironment([FromRoute][Required]string environment)
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
@@ -100,8 +100,8 @@ namespace IO.Swagger.Controllers
         [HttpGet]
         [Route("/Config/Reload")]
         [ValidateModelState]
-        [SwaggerOperation("ConfigReloadGet")]
-        public virtual IActionResult ConfigReloadGet()
+        [SwaggerOperation("GetConfigReload")]
+        public virtual IActionResult GetConfigReload()
         { 
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
