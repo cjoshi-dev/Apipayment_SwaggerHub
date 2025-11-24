@@ -131,6 +131,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Create developers overage invoices",
+        "description" : "Create invoices for developers' overage based on configured product overage rules.",
         "operationId" : "createDevelopersOverageInvoices",
         "responses" : {
           "200" : {
