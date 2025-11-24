@@ -38,6 +38,8 @@
     "/ApiPayment/v1/StripeProductsLoggedInUser" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "summary" : "Retrieve Stripe products for a logged-in user",
+        "description" : "Returns a list of Stripe products available for the specified logged-in user identified by email. Optionally includes the resume product when includeResumeProduct is true.",
         "operationId" : "getStripeProductsLoggedInUser",
         "parameters" : [ {
           "name" : "email",
@@ -69,6 +71,7 @@
     "/ApiPayment/v1/Products" : {
       "get" : {
         "tags" : [ "ApiPayment" ],
+        "description" : "Retrieve all products available in the ApiPayment system.",
         "operationId" : "getProducts",
         "responses" : {
           "200" : {

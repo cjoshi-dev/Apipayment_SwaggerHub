@@ -218,6 +218,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// 
         /// </summary>
+        /// <remarks>Retrieve all products available in the ApiPayment system.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
         [Route("/ApiPayment/v1/Products")]
@@ -318,8 +319,9 @@ namespace IO.Swagger.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Retrieve Stripe products for a logged-in user
         /// </summary>
+        /// <remarks>Returns a list of Stripe products available for the specified logged-in user identified by email. Optionally includes the resume product when includeResumeProduct is true.</remarks>
         /// <param name="email"></param>
         /// <param name="includeResumeProduct"></param>
         /// <response code="200">Success</response>
