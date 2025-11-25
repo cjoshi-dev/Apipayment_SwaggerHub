@@ -33,7 +33,7 @@ namespace IO.Swagger.Controllers
         /// <remarks>Create invoices for developers&#x27; overage based on configured product overage rules.</remarks>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/CreateDevelopersOverageInvoices")]
+        [Route("/ApiPayment/v1/CreateDevelopersOverageInvoices")]
         [ValidateModelState]
         [SwaggerOperation("CreateDevelopersOverageInvoices")]
         public virtual IActionResult CreateDevelopersOverageInvoices()
@@ -51,7 +51,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/Subscription")]
+        [Route("/ApiPayment/v1/Subscription")]
         [ValidateModelState]
         [SwaggerOperation("CreateSubscription")]
         public virtual IActionResult CreateSubscription([FromBody]SubscriptionRequest body)
@@ -69,7 +69,7 @@ namespace IO.Swagger.Controllers
         /// <param name="stripeSubscriptionId"></param>
         /// <response code="200">Success</response>
         [HttpDelete]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/CancelSubscriptionAdmin")]
+        [Route("/ApiPayment/v1/CancelSubscriptionAdmin")]
         [ValidateModelState]
         [SwaggerOperation("DeleteCancelSubscriptionAdmin")]
         public virtual IActionResult DeleteCancelSubscriptionAdmin([FromQuery][Required()]string stripeSubscriptionId)
@@ -88,7 +88,7 @@ namespace IO.Swagger.Controllers
         /// <param name="adminEmail"></param>
         /// <response code="200">Success</response>
         [HttpDelete]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/Enterprise/CancelSubscriptionAdmin")]
+        [Route("/ApiPayment/v1/Enterprise/CancelSubscriptionAdmin")]
         [ValidateModelState]
         [SwaggerOperation("DeleteEnterpriseCancelSubscriptionAdmin")]
         public virtual IActionResult DeleteEnterpriseCancelSubscriptionAdmin([FromQuery][Required()]int? subscriptionId, [FromQuery][Required()]string adminEmail)
@@ -106,7 +106,7 @@ namespace IO.Swagger.Controllers
         /// <param name="email"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/CustomerPaymentMethods")]
+        [Route("/ApiPayment/v1/CustomerPaymentMethods")]
         [ValidateModelState]
         [SwaggerOperation("GetCustomerPaymentMethods")]
         public virtual IActionResult GetCustomerPaymentMethods([FromQuery][Required()]string email)
@@ -124,7 +124,7 @@ namespace IO.Swagger.Controllers
         /// <param name="paymentMethodId"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/DeleteCustomerPaymentMethod")]
+        [Route("/ApiPayment/v1/DeleteCustomerPaymentMethod")]
         [ValidateModelState]
         [SwaggerOperation("GetDeleteCustomerPaymentMethod")]
         public virtual IActionResult GetDeleteCustomerPaymentMethod([FromQuery][Required()]string paymentMethodId)
@@ -143,7 +143,7 @@ namespace IO.Swagger.Controllers
         /// <param name="priceId"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/DowngradeOptions")]
+        [Route("/ApiPayment/v1/DowngradeOptions")]
         [ValidateModelState]
         [SwaggerOperation("GetDowngradeOptions")]
         public virtual IActionResult GetDowngradeOptions([FromQuery][Required()]string productId, [FromQuery][Required()]string priceId)
@@ -162,7 +162,7 @@ namespace IO.Swagger.Controllers
         /// <param name="developerId"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/GetEnterpriseDeveloperSubscriptions")]
+        [Route("/ApiPayment/v1/GetEnterpriseDeveloperSubscriptions")]
         [ValidateModelState]
         [SwaggerOperation("GetEnterpriseDeveloperSubscriptions")]
         public virtual IActionResult GetEnterpriseDeveloperSubscriptions([FromQuery]string email, [FromQuery]int? developerId)
@@ -179,7 +179,7 @@ namespace IO.Swagger.Controllers
         /// <remarks>Retrieve enterprise-tier products available in ApiPayment.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/EnterpriseProducts")]
+        [Route("/ApiPayment/v1/EnterpriseProducts")]
         [ValidateModelState]
         [SwaggerOperation("GetEnterpriseProducts")]
         public virtual IActionResult GetEnterpriseProducts()
@@ -196,7 +196,7 @@ namespace IO.Swagger.Controllers
         /// <remarks>Returns service health status.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/Health")]
+        [Route("/ApiPayment/v1/Health")]
         [ValidateModelState]
         [SwaggerOperation("GetHealth")]
         public virtual IActionResult GetHealth()
@@ -214,7 +214,7 @@ namespace IO.Swagger.Controllers
         /// <param name="productId"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/GetProductOverageConfig")]
+        [Route("/ApiPayment/v1/GetProductOverageConfig")]
         [ValidateModelState]
         [SwaggerOperation("GetProductOverageConfig")]
         public virtual IActionResult GetProductOverageConfig([FromQuery][Required()]int? productId)
@@ -231,7 +231,7 @@ namespace IO.Swagger.Controllers
         /// <remarks>Retrieve all products available in the ApiPayment system.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/Products")]
+        [Route("/ApiPayment/v1/Products")]
         [ValidateModelState]
         [SwaggerOperation("GetProducts")]
         public virtual IActionResult GetProducts()
@@ -248,7 +248,7 @@ namespace IO.Swagger.Controllers
         /// <remarks>Retrieve the mapping of product families.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/CCD/ProductsFamilyMapping")]
+        [Route("/ApiPayment/v1/CCD/ProductsFamilyMapping")]
         [ValidateModelState]
         [SwaggerOperation("GetProductsFamilyMapping")]
         public virtual IActionResult GetProductsFamilyMapping()
@@ -267,7 +267,7 @@ namespace IO.Swagger.Controllers
         /// <param name="paymentMethodId"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/SetDefaultCustomerPaymentMethod")]
+        [Route("/ApiPayment/v1/SetDefaultCustomerPaymentMethod")]
         [ValidateModelState]
         [SwaggerOperation("GetSetDefaultCustomerPaymentMethod")]
         public virtual IActionResult GetSetDefaultCustomerPaymentMethod([FromQuery][Required()]string email, [FromQuery][Required()]string paymentMethodId)
@@ -285,7 +285,7 @@ namespace IO.Swagger.Controllers
         /// <param name="paymentMethodId"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/ShowPaymentMethodDetails")]
+        [Route("/ApiPayment/v1/ShowPaymentMethodDetails")]
         [ValidateModelState]
         [SwaggerOperation("GetShowPaymentMethodDetails")]
         public virtual IActionResult GetShowPaymentMethodDetails([FromQuery][Required()]string paymentMethodId)
@@ -304,7 +304,7 @@ namespace IO.Swagger.Controllers
         /// <param name="priceAmount"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/StripeProductPriceChange")]
+        [Route("/ApiPayment/v1/StripeProductPriceChange")]
         [ValidateModelState]
         [SwaggerOperation("GetStripeProductPriceChange")]
         public virtual IActionResult GetStripeProductPriceChange([FromQuery][Required()]string productPriceId, [FromQuery][Required()]int? priceAmount)
@@ -321,7 +321,7 @@ namespace IO.Swagger.Controllers
         /// <remarks>Returns a list of Stripe products available for ApiPayment.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/StripeProducts")]
+        [Route("/ApiPayment/v1/StripeProducts")]
         [ValidateModelState]
         [SwaggerOperation("GetStripeProducts")]
         public virtual IActionResult GetStripeProducts()
@@ -340,7 +340,7 @@ namespace IO.Swagger.Controllers
         /// <param name="includeResumeProduct"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/StripeProductsLoggedInUser")]
+        [Route("/ApiPayment/v1/StripeProductsLoggedInUser")]
         [ValidateModelState]
         [SwaggerOperation("GetStripeProductsLoggedInUser")]
         public virtual IActionResult GetStripeProductsLoggedInUser([FromQuery][Required()]string email, [FromQuery]bool? includeResumeProduct)
@@ -358,7 +358,7 @@ namespace IO.Swagger.Controllers
         /// <param name="email"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/GetSubscriptionPaymentMethods")]
+        [Route("/ApiPayment/v1/GetSubscriptionPaymentMethods")]
         [ValidateModelState]
         [SwaggerOperation("GetSubscriptionPaymentMethods")]
         public virtual IActionResult GetSubscriptionPaymentMethods([FromQuery][Required()]string email)
@@ -377,7 +377,7 @@ namespace IO.Swagger.Controllers
         /// <param name="priceId"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/UpgradeOptions")]
+        [Route("/ApiPayment/v1/UpgradeOptions")]
         [ValidateModelState]
         [SwaggerOperation("GetUpgradeOptions")]
         public virtual IActionResult GetUpgradeOptions([FromQuery][Required()]string productId, [FromQuery][Required()]string priceId)
@@ -396,7 +396,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/CustomerPaymentMethods")]
+        [Route("/ApiPayment/v1/CustomerPaymentMethods")]
         [ValidateModelState]
         [SwaggerOperation("PostCustomerPaymentMethods")]
         public virtual IActionResult PostCustomerPaymentMethods([FromQuery][Required()]string email, [FromBody]AddPaymentMethodRequest body)
@@ -416,7 +416,7 @@ namespace IO.Swagger.Controllers
         /// <param name="adminEmail"></param>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/Enterprise/SuspendResumeSubscriptionByAdmin")]
+        [Route("/ApiPayment/v1/Enterprise/SuspendResumeSubscriptionByAdmin")]
         [ValidateModelState]
         [SwaggerOperation("PostEnterpriseSuspendResumeSubscriptionByAdmin")]
         public virtual IActionResult PostEnterpriseSuspendResumeSubscriptionByAdmin([FromQuery][Required()]int? subscriptionId, [FromQuery][Required()]string action, [FromQuery][Required()]string adminEmail)
@@ -435,7 +435,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/InvoicePay")]
+        [Route("/ApiPayment/v1/InvoicePay")]
         [ValidateModelState]
         [SwaggerOperation("PostInvoicePay")]
         public virtual IActionResult PostInvoicePay([FromQuery][Required()]string invoiceId, [FromBody]InvoicePayRequest body)
@@ -454,7 +454,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/Invoices")]
+        [Route("/ApiPayment/v1/Invoices")]
         [ValidateModelState]
         [SwaggerOperation("PostInvoices")]
         public virtual IActionResult PostInvoices([FromQuery][Required()]string stripeSubscriptionId, [FromBody]InvoiceSearchRequest body)
@@ -473,7 +473,7 @@ namespace IO.Swagger.Controllers
         /// <param name="loggedInAdminEmail"></param>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/ResumeSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}")]
+        [Route("/ApiPayment/v1/ResumeSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}")]
         [ValidateModelState]
         [SwaggerOperation("PostResumeSubscriptionByAdmin")]
         public virtual IActionResult PostResumeSubscriptionByAdmin([FromRoute][Required]string stripeSubscriptionId, [FromRoute][Required]string loggedInAdminEmail)
@@ -492,7 +492,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/StripeCustomerSubscriptions")]
+        [Route("/ApiPayment/v1/StripeCustomerSubscriptions")]
         [ValidateModelState]
         [SwaggerOperation("PostStripeCustomerSubscriptions")]
         public virtual IActionResult PostStripeCustomerSubscriptions([FromQuery][Required()]string email, [FromBody]SubscriptionSearchRequest body)
@@ -511,7 +511,7 @@ namespace IO.Swagger.Controllers
         /// <param name="loggedInAdminEmail"></param>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/SuspendSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}")]
+        [Route("/ApiPayment/v1/SuspendSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}")]
         [ValidateModelState]
         [SwaggerOperation("PostSuspendSubscriptionByAdmin")]
         public virtual IActionResult PostSuspendSubscriptionByAdmin([FromRoute][Required]string stripeSubscriptionId, [FromRoute][Required]string loggedInAdminEmail)
@@ -530,7 +530,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/TriggerDowngradeSubscription")]
+        [Route("/ApiPayment/v1/TriggerDowngradeSubscription")]
         [ValidateModelState]
         [SwaggerOperation("PostTriggerDowngradeSubscription")]
         public virtual IActionResult PostTriggerDowngradeSubscription([FromQuery][Required()]string stripeSubscriptionId, [FromBody]UpdateSubscriptionRequest body)
@@ -548,7 +548,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/UpgradeSubscription/ProratedCharge")]
+        [Route("/ApiPayment/v1/UpgradeSubscription/ProratedCharge")]
         [ValidateModelState]
         [SwaggerOperation("PostUpgradeSubscriptionProratedCharge")]
         public virtual IActionResult PostUpgradeSubscriptionProratedCharge([FromBody]UpgradeSubscriptionProratedChargeRequest body)
@@ -566,7 +566,7 @@ namespace IO.Swagger.Controllers
         /// <param name="stripeSubscriptionId"></param>
         /// <response code="200">Success</response>
         [HttpPut]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/CancelSubscription")]
+        [Route("/ApiPayment/v1/CancelSubscription")]
         [ValidateModelState]
         [SwaggerOperation("PutCancelSubscription")]
         public virtual IActionResult PutCancelSubscription([FromQuery][Required()]string stripeSubscriptionId)
@@ -585,7 +585,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPut]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/ChangeSubscriptionPaymentMethod")]
+        [Route("/ApiPayment/v1/ChangeSubscriptionPaymentMethod")]
         [ValidateModelState]
         [SwaggerOperation("PutChangeSubscriptionPaymentMethod")]
         public virtual IActionResult PutChangeSubscriptionPaymentMethod([FromQuery][Required()]string stripeSubscriptionId, [FromBody]SubscriptionPaymentMethodRequest body)
@@ -604,7 +604,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPut]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/DowngradeSubscription")]
+        [Route("/ApiPayment/v1/DowngradeSubscription")]
         [ValidateModelState]
         [SwaggerOperation("PutDowngradeSubscription")]
         public virtual IActionResult PutDowngradeSubscription([FromQuery][Required()]string stripeSubscriptionId, [FromBody]UpdateSubscriptionRequest body)
@@ -624,7 +624,7 @@ namespace IO.Swagger.Controllers
         /// <param name="newStripeProductPriceId"></param>
         /// <response code="200">Success</response>
         [HttpPut]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/Enterprise/DowngradeSubscription")]
+        [Route("/ApiPayment/v1/Enterprise/DowngradeSubscription")]
         [ValidateModelState]
         [SwaggerOperation("PutEnterpriseDowngradeSubscription")]
         public virtual IActionResult PutEnterpriseDowngradeSubscription([FromQuery][Required()]string email, [FromQuery][Required()]string currentStripeProductPriceId, [FromQuery][Required()]string newStripeProductPriceId)
@@ -644,7 +644,7 @@ namespace IO.Swagger.Controllers
         /// <param name="newStripeProductPriceId"></param>
         /// <response code="200">Success</response>
         [HttpPut]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/Enterprise/UpgradeSubscription")]
+        [Route("/ApiPayment/v1/Enterprise/UpgradeSubscription")]
         [ValidateModelState]
         [SwaggerOperation("PutEnterpriseUpgradeSubscription")]
         public virtual IActionResult PutEnterpriseUpgradeSubscription([FromQuery][Required()]string email, [FromQuery][Required()]string currentStripeProductPriceId, [FromQuery][Required()]string newStripeProductPriceId)
@@ -663,7 +663,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPut]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/UpdateCustomerPaymentMethods")]
+        [Route("/ApiPayment/v1/UpdateCustomerPaymentMethods")]
         [ValidateModelState]
         [SwaggerOperation("PutUpdateCustomerPaymentMethods")]
         public virtual IActionResult PutUpdateCustomerPaymentMethods([FromQuery][Required()]string paymentMethodId, [FromBody]UpdatePaymentMethodRequest body)
@@ -682,7 +682,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPut]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/UpgradeSubscription")]
+        [Route("/ApiPayment/v1/UpgradeSubscription")]
         [ValidateModelState]
         [SwaggerOperation("PutUpgradeSubscription")]
         public virtual IActionResult PutUpgradeSubscription([FromQuery][Required()]string stripeSubscriptionId, [FromBody]UpdateSubscriptionRequest body)
@@ -700,7 +700,7 @@ namespace IO.Swagger.Controllers
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPost]
-        [Route("/cjoshi-dev/ApiPayment/v1/ApiPayment/v1/SaveProductOverageConfig")]
+        [Route("/ApiPayment/v1/SaveProductOverageConfig")]
         [ValidateModelState]
         [SwaggerOperation("SaveProductOverageConfig")]
         public virtual IActionResult SaveProductOverageConfig([FromBody]ProductOverageConfig body)
