@@ -144,6 +144,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Save product overage configuration",
+        "description" : "Save or update the product overage configuration for ApiPayment. Accepts a ProductOverageConfig payload.",
         "operationId" : "saveProductOverageConfig",
         "requestBody" : {
           "content" : {
@@ -180,6 +181,7 @@
       "get" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Get product overage configuration",
+        "description" : "Retrieve the product overage configuration for a specified product.",
         "operationId" : "getProductOverageConfig",
         "parameters" : [ {
           "name" : "productId",
@@ -203,6 +205,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Create a subscription",
+        "description" : "Create a new subscription with the provided subscription request details.",
         "operationId" : "createSubscription",
         "requestBody" : {
           "content" : {
@@ -239,6 +242,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Post Stripe customer subscriptions by email",
+        "description" : "Retrieve Stripe customer subscriptions filtered by email.",
         "operationId" : "postStripeCustomerSubscriptions",
         "parameters" : [ {
           "name" : "email",
@@ -285,6 +289,7 @@
       "get" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Get enterprise developer subscriptions",
+        "description" : "Retrieve enterprise developer subscriptions filtered by email or developer ID.",
         "operationId" : "getEnterpriseDeveloperSubscriptions",
         "parameters" : [ {
           "name" : "email",
@@ -317,6 +322,7 @@
       "get" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Get upgrade options for a product and price",
+        "description" : "Retrieve available upgrade options for the specified product and price.",
         "operationId" : "getUpgradeOptions",
         "parameters" : [ {
           "name" : "productId",
@@ -348,6 +354,7 @@
       "get" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Get downgrade options for a product and price",
+        "description" : "Retrieve available downgrade options for the specified product and price.",
         "operationId" : "getDowngradeOptions",
         "parameters" : [ {
           "name" : "productId",
@@ -379,6 +386,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Post prorated charge for subscription upgrade",
+        "description" : "Calculate and post a prorated charge for upgrading a subscription.",
         "operationId" : "postUpgradeSubscriptionProratedCharge",
         "requestBody" : {
           "content" : {
@@ -415,6 +423,7 @@
       "put" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Upgrade a subscription",
+        "description" : "Upgrade an existing subscription identified by stripeSubscriptionId.",
         "operationId" : "putUpgradeSubscription",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
@@ -461,6 +470,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Trigger downgrade of a subscription",
+        "description" : "Initiate a downgrade process for a subscription identified by stripeSubscriptionId.",
         "operationId" : "postTriggerDowngradeSubscription",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
@@ -507,6 +517,7 @@
       "put" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Downgrade a subscription",
+        "description" : "Downgrade an existing subscription identified by stripeSubscriptionId.",
         "operationId" : "putDowngradeSubscription",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
@@ -553,6 +564,7 @@
       "delete" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Cancel subscription as admin",
+        "description" : "Cancel a subscription as an administrator identified by stripeSubscriptionId.",
         "operationId" : "deleteCancelSubscriptionAdmin",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
@@ -575,6 +587,7 @@
       "put" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Cancel a subscription",
+        "description" : "Cancel a subscription identified by stripeSubscriptionId.",
         "operationId" : "putCancelSubscription",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
@@ -597,6 +610,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Search invoices for a subscription",
+        "description" : "Search invoices related to a subscription identified by stripeSubscriptionId.",
         "operationId" : "postInvoices",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
@@ -643,6 +657,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Pay an invoice",
+        "description" : "Pay an invoice identified by invoiceId.",
         "operationId" : "postInvoicePay",
         "parameters" : [ {
           "name" : "invoiceId",
@@ -689,6 +704,7 @@
       "get" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Get customer payment methods by email",
+        "description" : "Retrieve payment methods associated with a customer email.",
         "operationId" : "getCustomerPaymentMethods",
         "parameters" : [ {
           "name" : "email",
@@ -709,6 +725,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Add a customer payment method",
+        "description" : "Add a new payment method for a customer identified by email.",
         "operationId" : "postCustomerPaymentMethods",
         "parameters" : [ {
           "name" : "email",
@@ -755,6 +772,7 @@
       "put" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Update a customer payment method",
+        "description" : "Update an existing customer payment method identified by paymentMethodId.",
         "operationId" : "putUpdateCustomerPaymentMethods",
         "parameters" : [ {
           "name" : "paymentMethodId",
@@ -801,6 +819,7 @@
       "get" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Delete a customer payment method",
+        "description" : "Delete a customer payment method identified by paymentMethodId.",
         "operationId" : "getDeleteCustomerPaymentMethod",
         "parameters" : [ {
           "name" : "paymentMethodId",
@@ -823,6 +842,7 @@
       "get" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Set default customer payment method",
+        "description" : "Set the default payment method for a customer identified by email and paymentMethodId.",
         "operationId" : "getSetDefaultCustomerPaymentMethod",
         "parameters" : [ {
           "name" : "email",
@@ -854,6 +874,7 @@
       "get" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Show details of a payment method",
+        "description" : "Retrieve detailed information about a payment method identified by paymentMethodId.",
         "operationId" : "getShowPaymentMethodDetails",
         "parameters" : [ {
           "name" : "paymentMethodId",
@@ -876,6 +897,7 @@
       "put" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Change payment method for a subscription",
+        "description" : "Change the payment method for a subscription identified by stripeSubscriptionId.",
         "operationId" : "putChangeSubscriptionPaymentMethod",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
@@ -922,6 +944,7 @@
       "get" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Get subscription payment methods by email",
+        "description" : "Retrieve payment methods associated with subscriptions for a customer email.",
         "operationId" : "getSubscriptionPaymentMethods",
         "parameters" : [ {
           "name" : "email",
@@ -944,6 +967,7 @@
       "delete" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Cancel enterprise subscription as admin",
+        "description" : "Cancel an enterprise subscription as an administrator.",
         "operationId" : "deleteEnterpriseCancelSubscriptionAdmin",
         "parameters" : [ {
           "name" : "subscriptionId",
@@ -976,6 +1000,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Suspend or resume subscription by admin",
+        "description" : "Suspend or resume an enterprise subscription as an administrator.",
         "operationId" : "postEnterpriseSuspendResumeSubscriptionByAdmin",
         "parameters" : [ {
           "name" : "subscriptionId",
@@ -1017,6 +1042,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Suspend subscription by admin",
+        "description" : "Suspend a subscription as an administrator.",
         "operationId" : "postSuspendSubscriptionByAdmin",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
@@ -1048,6 +1074,7 @@
       "post" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Resume subscription by admin",
+        "description" : "Resume a subscription as an administrator.",
         "operationId" : "postResumeSubscriptionByAdmin",
         "parameters" : [ {
           "name" : "stripeSubscriptionId",
@@ -1079,6 +1106,7 @@
       "get" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Get products family mapping",
+        "description" : "Retrieve the mapping of product families.",
         "operationId" : "getProductsFamilyMapping",
         "responses" : {
           "200" : {
@@ -1091,6 +1119,7 @@
       "put" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Upgrade enterprise subscription",
+        "description" : "Upgrade an enterprise subscription with new product price.",
         "operationId" : "putEnterpriseUpgradeSubscription",
         "parameters" : [ {
           "name" : "email",
@@ -1131,6 +1160,7 @@
       "put" : {
         "tags" : [ "ApiPayment" ],
         "summary" : "Downgrade enterprise subscription",
+        "description" : "Downgrade an enterprise subscription with new product price.",
         "operationId" : "putEnterpriseDowngradeSubscription",
         "parameters" : [ {
           "name" : "email",
@@ -1171,6 +1201,7 @@
       "get" : {
         "tags" : [ "Config" ],
         "summary" : "Reload configuration",
+        "description" : "Reload the system configuration.",
         "operationId" : "getConfigReload",
         "responses" : {
           "200" : {
@@ -1183,6 +1214,7 @@
       "get" : {
         "tags" : [ "Config" ],
         "summary" : "Get configuration names",
+        "description" : "Retrieve all configuration names.",
         "operationId" : "getConfigNames",
         "responses" : {
           "200" : {
@@ -1195,6 +1227,7 @@
       "get" : {
         "tags" : [ "Config" ],
         "summary" : "Get configuration names by environment",
+        "description" : "Retrieve configuration names filtered by environment.",
         "operationId" : "getConfigNamesByEnvironment",
         "parameters" : [ {
           "name" : "environment",
@@ -1217,6 +1250,7 @@
       "get" : {
         "tags" : [ "Config" ],
         "summary" : "Get configuration names in CURL format",
+        "description" : "Retrieve configuration names formatted for CURL.",
         "operationId" : "getConfigNamesCurl",
         "responses" : {
           "200" : {
@@ -1229,6 +1263,7 @@
       "get" : {
         "tags" : [ "Config" ],
         "summary" : "Get configuration names in CURL format by environment",
+        "description" : "Retrieve configuration names formatted for CURL filtered by environment.",
         "operationId" : "getConfigNamesCurlByEnvironment",
         "parameters" : [ {
           "name" : "environment",
@@ -1251,6 +1286,7 @@
       "get" : {
         "tags" : [ "Health" ],
         "summary" : "Get root health status",
+        "description" : "Retrieve the health status of the root service.",
         "operationId" : "getHealthRoot",
         "responses" : {
           "200" : {
@@ -1263,6 +1299,7 @@
       "get" : {
         "tags" : [ "Help" ],
         "summary" : "Get help information",
+        "description" : "Retrieve help information for the API.",
         "operationId" : "getHelp",
         "responses" : {
           "200" : {

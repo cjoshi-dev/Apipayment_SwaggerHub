@@ -47,6 +47,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Create a subscription
         /// </summary>
+        /// <remarks>Create a new subscription with the provided subscription request details.</remarks>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPost]
@@ -64,6 +65,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Cancel subscription as admin
         /// </summary>
+        /// <remarks>Cancel a subscription as an administrator identified by stripeSubscriptionId.</remarks>
         /// <param name="stripeSubscriptionId"></param>
         /// <response code="200">Success</response>
         [HttpDelete]
@@ -81,6 +83,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Cancel enterprise subscription as admin
         /// </summary>
+        /// <remarks>Cancel an enterprise subscription as an administrator.</remarks>
         /// <param name="subscriptionId"></param>
         /// <param name="adminEmail"></param>
         /// <response code="200">Success</response>
@@ -99,6 +102,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get customer payment methods by email
         /// </summary>
+        /// <remarks>Retrieve payment methods associated with a customer email.</remarks>
         /// <param name="email"></param>
         /// <response code="200">Success</response>
         [HttpGet]
@@ -116,6 +120,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Delete a customer payment method
         /// </summary>
+        /// <remarks>Delete a customer payment method identified by paymentMethodId.</remarks>
         /// <param name="paymentMethodId"></param>
         /// <response code="200">Success</response>
         [HttpGet]
@@ -133,6 +138,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get downgrade options for a product and price
         /// </summary>
+        /// <remarks>Retrieve available downgrade options for the specified product and price.</remarks>
         /// <param name="productId"></param>
         /// <param name="priceId"></param>
         /// <response code="200">Success</response>
@@ -151,6 +157,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get enterprise developer subscriptions
         /// </summary>
+        /// <remarks>Retrieve enterprise developer subscriptions filtered by email or developer ID.</remarks>
         /// <param name="email"></param>
         /// <param name="developerId"></param>
         /// <response code="200">Success</response>
@@ -203,6 +210,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get product overage configuration
         /// </summary>
+        /// <remarks>Retrieve the product overage configuration for a specified product.</remarks>
         /// <param name="productId"></param>
         /// <response code="200">Success</response>
         [HttpGet]
@@ -237,6 +245,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get products family mapping
         /// </summary>
+        /// <remarks>Retrieve the mapping of product families.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
         [Route("/ApiPayment/v1/CCD/ProductsFamilyMapping")]
@@ -253,6 +262,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Set default customer payment method
         /// </summary>
+        /// <remarks>Set the default payment method for a customer identified by email and paymentMethodId.</remarks>
         /// <param name="email"></param>
         /// <param name="paymentMethodId"></param>
         /// <response code="200">Success</response>
@@ -271,6 +281,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Show details of a payment method
         /// </summary>
+        /// <remarks>Retrieve detailed information about a payment method identified by paymentMethodId.</remarks>
         /// <param name="paymentMethodId"></param>
         /// <response code="200">Success</response>
         [HttpGet]
@@ -343,6 +354,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get subscription payment methods by email
         /// </summary>
+        /// <remarks>Retrieve payment methods associated with subscriptions for a customer email.</remarks>
         /// <param name="email"></param>
         /// <response code="200">Success</response>
         [HttpGet]
@@ -360,6 +372,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get upgrade options for a product and price
         /// </summary>
+        /// <remarks>Retrieve available upgrade options for the specified product and price.</remarks>
         /// <param name="productId"></param>
         /// <param name="priceId"></param>
         /// <response code="200">Success</response>
@@ -378,6 +391,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Add a customer payment method
         /// </summary>
+        /// <remarks>Add a new payment method for a customer identified by email.</remarks>
         /// <param name="email"></param>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
@@ -396,6 +410,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Suspend or resume subscription by admin
         /// </summary>
+        /// <remarks>Suspend or resume an enterprise subscription as an administrator.</remarks>
         /// <param name="subscriptionId"></param>
         /// <param name="action"></param>
         /// <param name="adminEmail"></param>
@@ -415,6 +430,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Pay an invoice
         /// </summary>
+        /// <remarks>Pay an invoice identified by invoiceId.</remarks>
         /// <param name="invoiceId"></param>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
@@ -433,6 +449,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Search invoices for a subscription
         /// </summary>
+        /// <remarks>Search invoices related to a subscription identified by stripeSubscriptionId.</remarks>
         /// <param name="stripeSubscriptionId"></param>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
@@ -451,6 +468,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Resume subscription by admin
         /// </summary>
+        /// <remarks>Resume a subscription as an administrator.</remarks>
         /// <param name="stripeSubscriptionId"></param>
         /// <param name="loggedInAdminEmail"></param>
         /// <response code="200">Success</response>
@@ -469,6 +487,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Post Stripe customer subscriptions by email
         /// </summary>
+        /// <remarks>Retrieve Stripe customer subscriptions filtered by email.</remarks>
         /// <param name="email"></param>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
@@ -487,6 +506,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Suspend subscription by admin
         /// </summary>
+        /// <remarks>Suspend a subscription as an administrator.</remarks>
         /// <param name="stripeSubscriptionId"></param>
         /// <param name="loggedInAdminEmail"></param>
         /// <response code="200">Success</response>
@@ -505,6 +525,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Trigger downgrade of a subscription
         /// </summary>
+        /// <remarks>Initiate a downgrade process for a subscription identified by stripeSubscriptionId.</remarks>
         /// <param name="stripeSubscriptionId"></param>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
@@ -523,6 +544,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Post prorated charge for subscription upgrade
         /// </summary>
+        /// <remarks>Calculate and post a prorated charge for upgrading a subscription.</remarks>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPost]
@@ -540,6 +562,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Cancel a subscription
         /// </summary>
+        /// <remarks>Cancel a subscription identified by stripeSubscriptionId.</remarks>
         /// <param name="stripeSubscriptionId"></param>
         /// <response code="200">Success</response>
         [HttpPut]
@@ -557,6 +580,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Change payment method for a subscription
         /// </summary>
+        /// <remarks>Change the payment method for a subscription identified by stripeSubscriptionId.</remarks>
         /// <param name="stripeSubscriptionId"></param>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
@@ -575,6 +599,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Downgrade a subscription
         /// </summary>
+        /// <remarks>Downgrade an existing subscription identified by stripeSubscriptionId.</remarks>
         /// <param name="stripeSubscriptionId"></param>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
@@ -593,6 +618,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Downgrade enterprise subscription
         /// </summary>
+        /// <remarks>Downgrade an enterprise subscription with new product price.</remarks>
         /// <param name="email"></param>
         /// <param name="currentStripeProductPriceId"></param>
         /// <param name="newStripeProductPriceId"></param>
@@ -612,6 +638,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Upgrade enterprise subscription
         /// </summary>
+        /// <remarks>Upgrade an enterprise subscription with new product price.</remarks>
         /// <param name="email"></param>
         /// <param name="currentStripeProductPriceId"></param>
         /// <param name="newStripeProductPriceId"></param>
@@ -631,6 +658,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Update a customer payment method
         /// </summary>
+        /// <remarks>Update an existing customer payment method identified by paymentMethodId.</remarks>
         /// <param name="paymentMethodId"></param>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
@@ -649,6 +677,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Upgrade a subscription
         /// </summary>
+        /// <remarks>Upgrade an existing subscription identified by stripeSubscriptionId.</remarks>
         /// <param name="stripeSubscriptionId"></param>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
@@ -667,6 +696,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Save product overage configuration
         /// </summary>
+        /// <remarks>Save or update the product overage configuration for ApiPayment. Accepts a ProductOverageConfig payload.</remarks>
         /// <param name="body"></param>
         /// <response code="200">Success</response>
         [HttpPost]

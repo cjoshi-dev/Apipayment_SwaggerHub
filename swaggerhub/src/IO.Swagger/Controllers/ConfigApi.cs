@@ -30,6 +30,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get configuration names
         /// </summary>
+        /// <remarks>Retrieve all configuration names.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
         [Route("/Config/Names")]
@@ -46,6 +47,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get configuration names by environment
         /// </summary>
+        /// <remarks>Retrieve configuration names filtered by environment.</remarks>
         /// <param name="environment"></param>
         /// <response code="200">Success</response>
         [HttpGet]
@@ -63,6 +65,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get configuration names in CURL format
         /// </summary>
+        /// <remarks>Retrieve configuration names formatted for CURL.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
         [Route("/Config/Names/CURL")]
@@ -79,6 +82,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get configuration names in CURL format by environment
         /// </summary>
+        /// <remarks>Retrieve configuration names formatted for CURL filtered by environment.</remarks>
         /// <param name="environment"></param>
         /// <response code="200">Success</response>
         [HttpGet]
@@ -96,6 +100,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Reload configuration
         /// </summary>
+        /// <remarks>Reload the system configuration.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
         [Route("/Config/Reload")]

@@ -30,6 +30,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get help information
         /// </summary>
+        /// <remarks>Retrieve help information for the API.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
         [Route("/Help")]

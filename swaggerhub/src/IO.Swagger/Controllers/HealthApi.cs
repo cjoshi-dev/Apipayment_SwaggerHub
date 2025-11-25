@@ -30,6 +30,7 @@ namespace IO.Swagger.Controllers
         /// <summary>
         /// Get root health status
         /// </summary>
+        /// <remarks>Retrieve the health status of the root service.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
         [Route("/Health")]
