@@ -6,7 +6,20 @@
     "version" : "v1"
   },
   "servers" : [ {
-    "url" : "/"
+    "url" : "https://virtserver.swaggerhub.com/cjoshi-dev/ApiPayment/v1",
+    "description" : "SwaggerHub API Auto Mocking - Virtual Mock Server for contract testing"
+  }, {
+    "url" : "https://devportal-api-20.onestop.co",
+    "description" : "UAT Server"
+  }, {
+    "url" : "https://devportal-api-40.onestop.co",
+    "description" : "DEV Server"
+  }, {
+    "url" : "https://dev-api.yourdomain.com",
+    "description" : "Development Server"
+  }, {
+    "url" : "http://localhost:5002",
+    "description" : "Local Development Server"
   } ],
   "paths" : {
     "/ApiPayment/v1/Health" : {
