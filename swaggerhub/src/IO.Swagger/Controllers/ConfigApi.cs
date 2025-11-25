@@ -33,7 +33,7 @@ namespace IO.Swagger.Controllers
         /// <remarks>Retrieve all configuration names.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/Config/Names")]
+        [Route("/Config/Names")]
         [ValidateModelState]
         [SwaggerOperation("GetConfigNames")]
         public virtual IActionResult GetConfigNames()
@@ -51,7 +51,7 @@ namespace IO.Swagger.Controllers
         /// <param name="environment"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/Config/Names/{environment}")]
+        [Route("/Config/Names/{environment}")]
         [ValidateModelState]
         [SwaggerOperation("GetConfigNamesByEnvironment")]
         public virtual IActionResult GetConfigNamesByEnvironment([FromRoute][Required]string environment)
@@ -68,7 +68,7 @@ namespace IO.Swagger.Controllers
         /// <remarks>Retrieve configuration names formatted for CURL.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/Config/Names/CURL")]
+        [Route("/Config/Names/CURL")]
         [ValidateModelState]
         [SwaggerOperation("GetConfigNamesCurl")]
         public virtual IActionResult GetConfigNamesCurl()
@@ -86,7 +86,7 @@ namespace IO.Swagger.Controllers
         /// <param name="environment"></param>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/Config/Names/CURL/{environment}")]
+        [Route("/Config/Names/CURL/{environment}")]
         [ValidateModelState]
         [SwaggerOperation("GetConfigNamesCurlByEnvironment")]
         public virtual IActionResult GetConfigNamesCurlByEnvironment([FromRoute][Required]string environment)
@@ -103,7 +103,7 @@ namespace IO.Swagger.Controllers
         /// <remarks>Reload the system configuration.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/Config/Reload")]
+        [Route("/Config/Reload")]
         [ValidateModelState]
         [SwaggerOperation("GetConfigReload")]
         public virtual IActionResult GetConfigReload()

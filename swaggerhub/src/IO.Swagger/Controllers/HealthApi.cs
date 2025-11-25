@@ -33,7 +33,7 @@ namespace IO.Swagger.Controllers
         /// <remarks>Retrieve the health status of the root service.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/Health")]
+        [Route("/Health")]
         [ValidateModelState]
         [SwaggerOperation("GetHealthRoot")]
         public virtual IActionResult GetHealthRoot()

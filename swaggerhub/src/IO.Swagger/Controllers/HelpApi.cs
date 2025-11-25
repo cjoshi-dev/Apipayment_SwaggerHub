@@ -33,7 +33,7 @@ namespace IO.Swagger.Controllers
         /// <remarks>Retrieve help information for the API.</remarks>
         /// <response code="200">Success</response>
         [HttpGet]
-        [Route("/cjoshi-dev/ApiPayment/v1/Help")]
+        [Route("/Help")]
         [ValidateModelState]
         [SwaggerOperation("GetHelp")]
         public virtual IActionResult GetHelp()
