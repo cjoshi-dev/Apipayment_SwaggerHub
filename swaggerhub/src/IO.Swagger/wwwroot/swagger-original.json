@@ -1,0 +1,1666 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "ApiPayment API",
+    "description" : "API for handling payments, subscriptions, invoices, and payment methods for ApiPayment services.",
+    "version" : "v1"
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "paths" : {
+    "/ApiPayment/v1/Health" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get health status of the ApiPayment service",
+        "description" : "Returns service health status.",
+        "operationId" : "getHealth",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/StripeProducts" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get list of Stripe products",
+        "description" : "Returns a list of Stripe products available for ApiPayment.",
+        "operationId" : "getStripeProducts",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/StripeProductsLoggedInUser" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get Stripe products for a logged-in user",
+        "description" : "Returns a list of Stripe products available for the specified logged-in user identified by email. Optionally includes the resume product when includeResumeProduct is true.",
+        "operationId" : "getStripeProductsLoggedInUser",
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "includeResumeProduct",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "default" : false
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Products" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get all products in ApiPayment system",
+        "description" : "Retrieve all products available in the ApiPayment system.",
+        "operationId" : "getProducts",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/StripeProductPriceChange" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get Stripe product price change info",
+        "description" : "Retrieve information about a stripe product price change for the specified productPriceId and amount.",
+        "operationId" : "getStripeProductPriceChange",
+        "parameters" : [ {
+          "name" : "productPriceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "priceAmount",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/EnterpriseProducts" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get enterprise-tier products",
+        "description" : "Retrieve enterprise-tier products available in ApiPayment.",
+        "operationId" : "getEnterpriseProducts",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/CreateDevelopersOverageInvoices" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Create developers overage invoices",
+        "description" : "Create invoices for developers' overage based on configured product overage rules.",
+        "operationId" : "createDevelopersOverageInvoices",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/SaveProductOverageConfig" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Save product overage configuration",
+        "description" : "Save or update the product overage configuration for ApiPayment. Accepts a ProductOverageConfig payload.",
+        "operationId" : "saveProductOverageConfig",
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProductOverageConfig"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProductOverageConfig"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProductOverageConfig"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProductOverageConfig"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/GetProductOverageConfig" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get product overage configuration",
+        "description" : "Retrieve the product overage configuration for a specified product.",
+        "operationId" : "getProductOverageConfig",
+        "parameters" : [ {
+          "name" : "productId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Subscription" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Create a subscription",
+        "description" : "Create a new subscription with the provided subscription request details.",
+        "operationId" : "createSubscription",
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/StripeCustomerSubscriptions" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Post Stripe customer subscriptions by email",
+        "description" : "Retrieve Stripe customer subscriptions filtered by email.",
+        "operationId" : "postStripeCustomerSubscriptions",
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionSearchRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionSearchRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionSearchRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionSearchRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/GetEnterpriseDeveloperSubscriptions" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get enterprise developer subscriptions",
+        "description" : "Retrieve enterprise developer subscriptions filtered by email or developer ID.",
+        "operationId" : "getEnterpriseDeveloperSubscriptions",
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "developerId",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/UpgradeOptions" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get upgrade options for a product and price",
+        "description" : "Retrieve available upgrade options for the specified product and price.",
+        "operationId" : "getUpgradeOptions",
+        "parameters" : [ {
+          "name" : "productId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "priceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/DowngradeOptions" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get downgrade options for a product and price",
+        "description" : "Retrieve available downgrade options for the specified product and price.",
+        "operationId" : "getDowngradeOptions",
+        "parameters" : [ {
+          "name" : "productId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "priceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/UpgradeSubscription/ProratedCharge" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Post prorated charge for subscription upgrade",
+        "description" : "Calculate and post a prorated charge for upgrading a subscription.",
+        "operationId" : "postUpgradeSubscriptionProratedCharge",
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpgradeSubscriptionProratedChargeRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpgradeSubscriptionProratedChargeRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpgradeSubscriptionProratedChargeRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpgradeSubscriptionProratedChargeRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/UpgradeSubscription" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Upgrade a subscription",
+        "description" : "Upgrade an existing subscription identified by stripeSubscriptionId.",
+        "operationId" : "putUpgradeSubscription",
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/TriggerDowngradeSubscription" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Trigger downgrade of a subscription",
+        "description" : "Initiate a downgrade process for a subscription identified by stripeSubscriptionId.",
+        "operationId" : "postTriggerDowngradeSubscription",
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/DowngradeSubscription" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Downgrade a subscription",
+        "description" : "Downgrade an existing subscription identified by stripeSubscriptionId.",
+        "operationId" : "putDowngradeSubscription",
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateSubscriptionRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/CancelSubscriptionAdmin" : {
+      "delete" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Cancel subscription as admin",
+        "description" : "Cancel a subscription as an administrator identified by stripeSubscriptionId.",
+        "operationId" : "deleteCancelSubscriptionAdmin",
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/CancelSubscription" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Cancel a subscription",
+        "description" : "Cancel a subscription identified by stripeSubscriptionId.",
+        "operationId" : "putCancelSubscription",
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Invoices" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Search invoices for a subscription",
+        "description" : "Search invoices related to a subscription identified by stripeSubscriptionId.",
+        "operationId" : "postInvoices",
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoiceSearchRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoiceSearchRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoiceSearchRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoiceSearchRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/InvoicePay" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Pay an invoice",
+        "description" : "Pay an invoice identified by invoiceId.",
+        "operationId" : "postInvoicePay",
+        "parameters" : [ {
+          "name" : "invoiceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoicePayRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoicePayRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoicePayRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InvoicePayRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/CustomerPaymentMethods" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get customer payment methods by email",
+        "description" : "Retrieve payment methods associated with a customer email.",
+        "operationId" : "getCustomerPaymentMethods",
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Add a customer payment method",
+        "description" : "Add a new payment method for a customer identified by email.",
+        "operationId" : "postCustomerPaymentMethods",
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddPaymentMethodRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddPaymentMethodRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddPaymentMethodRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddPaymentMethodRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/UpdateCustomerPaymentMethods" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Update a customer payment method",
+        "description" : "Update an existing customer payment method identified by paymentMethodId.",
+        "operationId" : "putUpdateCustomerPaymentMethods",
+        "parameters" : [ {
+          "name" : "paymentMethodId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdatePaymentMethodRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdatePaymentMethodRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdatePaymentMethodRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdatePaymentMethodRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/DeleteCustomerPaymentMethod" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Delete a customer payment method",
+        "description" : "Delete a customer payment method identified by paymentMethodId.",
+        "operationId" : "getDeleteCustomerPaymentMethod",
+        "parameters" : [ {
+          "name" : "paymentMethodId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/SetDefaultCustomerPaymentMethod" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Set default customer payment method",
+        "description" : "Set the default payment method for a customer identified by email and paymentMethodId.",
+        "operationId" : "getSetDefaultCustomerPaymentMethod",
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "paymentMethodId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/ShowPaymentMethodDetails" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Show details of a payment method",
+        "description" : "Retrieve detailed information about a payment method identified by paymentMethodId.",
+        "operationId" : "getShowPaymentMethodDetails",
+        "parameters" : [ {
+          "name" : "paymentMethodId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/ChangeSubscriptionPaymentMethod" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Change payment method for a subscription",
+        "description" : "Change the payment method for a subscription identified by stripeSubscriptionId.",
+        "operationId" : "putChangeSubscriptionPaymentMethod",
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json-patch+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionPaymentMethodRequest"
+              }
+            },
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionPaymentMethodRequest"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionPaymentMethodRequest"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SubscriptionPaymentMethodRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/GetSubscriptionPaymentMethods" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get subscription payment methods by email",
+        "description" : "Retrieve payment methods associated with subscriptions for a customer email.",
+        "operationId" : "getSubscriptionPaymentMethods",
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Enterprise/CancelSubscriptionAdmin" : {
+      "delete" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Cancel enterprise subscription as admin",
+        "description" : "Cancel an enterprise subscription as an administrator.",
+        "operationId" : "deleteEnterpriseCancelSubscriptionAdmin",
+        "parameters" : [ {
+          "name" : "subscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "adminEmail",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Enterprise/SuspendResumeSubscriptionByAdmin" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Suspend or resume subscription by admin",
+        "description" : "Suspend or resume an enterprise subscription as an administrator.",
+        "operationId" : "postEnterpriseSuspendResumeSubscriptionByAdmin",
+        "parameters" : [ {
+          "name" : "subscriptionId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "action",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "adminEmail",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/SuspendSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Suspend subscription by admin",
+        "description" : "Suspend a subscription as an administrator.",
+        "operationId" : "postSuspendSubscriptionByAdmin",
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "loggedInAdminEmail",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/ResumeSubscriptionByAdmin/{stripeSubscriptionId}/{loggedInAdminEmail}" : {
+      "post" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Resume subscription by admin",
+        "description" : "Resume a subscription as an administrator.",
+        "operationId" : "postResumeSubscriptionByAdmin",
+        "parameters" : [ {
+          "name" : "stripeSubscriptionId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "loggedInAdminEmail",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/CCD/ProductsFamilyMapping" : {
+      "get" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Get products family mapping",
+        "description" : "Retrieve the mapping of product families.",
+        "operationId" : "getProductsFamilyMapping",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Enterprise/UpgradeSubscription" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Upgrade enterprise subscription",
+        "description" : "Upgrade an enterprise subscription with new product price.",
+        "operationId" : "putEnterpriseUpgradeSubscription",
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "currentStripeProductPriceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "newStripeProductPriceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/ApiPayment/v1/Enterprise/DowngradeSubscription" : {
+      "put" : {
+        "tags" : [ "ApiPayment" ],
+        "summary" : "Downgrade enterprise subscription",
+        "description" : "Downgrade an enterprise subscription with new product price.",
+        "operationId" : "putEnterpriseDowngradeSubscription",
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "currentStripeProductPriceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "newStripeProductPriceId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Config/Reload" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "summary" : "Reload configuration",
+        "description" : "Reload the system configuration.",
+        "operationId" : "getConfigReload",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Config/Names" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "summary" : "Get configuration names",
+        "description" : "Retrieve all configuration names.",
+        "operationId" : "getConfigNames",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Config/Names/{environment}" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "summary" : "Get configuration names by environment",
+        "description" : "Retrieve configuration names filtered by environment.",
+        "operationId" : "getConfigNamesByEnvironment",
+        "parameters" : [ {
+          "name" : "environment",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Config/Names/CURL" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "summary" : "Get configuration names in CURL format",
+        "description" : "Retrieve configuration names formatted for CURL.",
+        "operationId" : "getConfigNamesCurl",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Config/Names/CURL/{environment}" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "summary" : "Get configuration names in CURL format by environment",
+        "description" : "Retrieve configuration names formatted for CURL filtered by environment.",
+        "operationId" : "getConfigNamesCurlByEnvironment",
+        "parameters" : [ {
+          "name" : "environment",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Health" : {
+      "get" : {
+        "tags" : [ "Health" ],
+        "summary" : "Get root health status",
+        "description" : "Retrieve the health status of the root service.",
+        "operationId" : "getHealthRoot",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    },
+    "/Help" : {
+      "get" : {
+        "tags" : [ "Help" ],
+        "summary" : "Get help information",
+        "description" : "Retrieve help information for the API.",
+        "operationId" : "getHelp",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "AddPaymentMethodRequest" : {
+        "type" : "object",
+        "properties" : {
+          "AppCode" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "SuccessUrl" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "CancelUrl" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "Address" : {
+        "type" : "object",
+        "properties" : {
+          "city" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "country" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "line1" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "postal_code" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "state" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "Billing_Details" : {
+        "type" : "object",
+        "properties" : {
+          "address" : {
+            "$ref" : "#/components/schemas/Address"
+          },
+          "email" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "name" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "phone" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "Card" : {
+        "type" : "object",
+        "properties" : {
+          "exp_month" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "exp_year" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "DateRangeFilter" : {
+        "type" : "object",
+        "properties" : {
+          "GreaterThanOrEqual" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "LessThanOrEqual" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "LessThan" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "GreaterThan" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "InvoicePayRequest" : {
+        "type" : "object",
+        "properties" : {
+          "payment_method" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "InvoiceSearchRequest" : {
+        "type" : "object",
+        "properties" : {
+          "Limit" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Created" : {
+            "$ref" : "#/components/schemas/DateRangeFilter"
+          },
+          "invoiceStatus" : {
+            "$ref" : "#/components/schemas/InvoiceStatus"
+          },
+          "Customer" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "CollectionMethod" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "DueDate" : {
+            "$ref" : "#/components/schemas/DateRangeFilter"
+          },
+          "EndingBefore" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "StartingAfter" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "InvoiceStatus" : {
+        "type" : "integer",
+        "format" : "int32",
+        "enum" : [ 0, 1, 2, 3, 4 ]
+      },
+      "Item" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "price" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "PaymentMethodMetadata" : {
+        "type" : "object",
+        "properties" : {
+          "foo" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "ProductOverageConfig" : {
+        "required" : [ "NumberOfRequest", "ProductId", "Rate" ],
+        "type" : "object",
+        "properties" : {
+          "Id" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "ProductId" : {
+            "maximum" : 999999999,
+            "minimum" : 1,
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "NumberOfRequest" : {
+            "maximum" : 1000000,
+            "minimum" : 1,
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "Rate" : {
+            "maximum" : 10000,
+            "type" : "number",
+            "format" : "double"
+          },
+          "IsActive" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "CreatedDateTime" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "CreatedBy" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "SubscriptionPaymentMethodRequest" : {
+        "type" : "object",
+        "properties" : {
+          "default_payment_method" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "SubscriptionRequest" : {
+        "required" : [ "PriceId" ],
+        "type" : "object",
+        "properties" : {
+          "AppCode" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "PriceId" : {
+            "minLength" : 1,
+            "type" : "string"
+          },
+          "CustomerId" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "CustomerEmail" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "SuccessUrl" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "CancelUrl" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Quantity" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "TrialPeriodDays" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "SubscriptionSearchRequest" : {
+        "type" : "object",
+        "properties" : {
+          "Status" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Created" : {
+            "$ref" : "#/components/schemas/DateRangeFilter"
+          },
+          "EndingBefore" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "StartingAfter" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "Limit" : {
+            "type" : "integer",
+            "format" : "int32",
+            "nullable" : true
+          },
+          "Price" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "UpdatePaymentMethodRequest" : {
+        "type" : "object",
+        "properties" : {
+          "billing_details" : {
+            "$ref" : "#/components/schemas/Billing_Details"
+          },
+          "metadata" : {
+            "$ref" : "#/components/schemas/PaymentMethodMetadata"
+          },
+          "card" : {
+            "$ref" : "#/components/schemas/Card"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "UpdateSubscriptionRequest" : {
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "nullable" : true,
+            "items" : {
+              "$ref" : "#/components/schemas/Item"
+            }
+          },
+          "proration_behavior" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "UpgradeSubscriptionProratedChargeRequest" : {
+        "type" : "object",
+        "properties" : {
+          "stripeSubscriptionId" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "customerId" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "newUpgradePriceId" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      }
+    }
+  }
+}
